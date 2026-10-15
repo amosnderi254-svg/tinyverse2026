@@ -1,1062 +1,1490 @@
-<title>Web Development — Tinyverse Solutions</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<title>Web Development Kenya | Tinyverse Solutions</title>
+  <meta name="description" content="Custom websites and web applications built for performance and conversions. M-Pesa integration, WooCommerce, Next.js, WordPress — engineered for the Kenyan market.">
+  <meta name="keywords" content="web development Kenya, website design Nairobi, M-Pesa integration, WooCommerce Kenya, custom website Kenya, web developer Nairobi">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Tinyverse Solutions">
+  <link rel="canonical" href="https://www.mytinyverse.com/service-web.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tinyverse Solutions">
+  <meta property="og:title" content="Web Development Kenya | Tinyverse Solutions">
+  <meta property="og:description" content="Custom websites and web applications built for performance and conversions. M-Pesa integration, WooCommerce, Next.js, WordPress — engineered for the Kenyan market.">
+  <meta property="og:url" content="https://www.mytinyverse.com/service-web.html">
+  <meta property="og:image" content="https://www.mytinyverse.com/og-web.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tinyverseke">
+  <meta name="twitter:title" content="Web Development Kenya | Tinyverse Solutions">
+  <meta name="twitter:description" content="Custom websites and web applications built for performance and conversions. M-Pesa integration, WooCommerce, Next.js, WordPress — engineered for the Kenyan market.">
+  <meta name="twitter:image" content="https://www.mytinyverse.com/og-web.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap">
+
 <style>
-/* ─── TOKEN SYSTEM ─────────────────────────────────────────────────
-   Layout: fullscreen stacked sections, scroll-reveal, parallax hero
-   Color: cinema-dark with gold accent
-   Type: Syne 800 headlines / Inter 400-600 body
-──────────────────────────────────────────────────────────────────── */
+/* ── TOKENS ─────────────────────────────────────────────────── */
 :root {
-  --bg: #0A0A12;
-  --surface: #111120;
-  --raised: #18182A;
-  --border: rgba(115,87,216,0.18);
-  --fg: #F8F7F2;
-  --muted: rgba(248,247,242,0.55);
-  --subtle: rgba(248,247,242,0.28);
-  --gold: #FFD84D;
-  --gold-dim: rgba(255,216,77,0.15);
-  --gold-glow: rgba(255,216,77,0.35);
-  --electric:     #7357D8;
-  --electric-dim: rgba(115,87,216,0.15);
-  --electric-glow:rgba(115,87,216,0.35);
+  --bg:            #080810;
+  --surface:       #0f0f1e;
+  --card:          #141428;
+  --border:        rgba(115,87,216,0.2);
+  --border-light:  rgba(255,255,255,0.06);
+  --fg:            #F0EFF9;
+  --muted:         rgba(240,239,249,0.5);
+  --subtle:        rgba(240,239,249,0.24);
+  --gold:          #FFD84D;
+  --gold-dim:      rgba(255,216,77,0.12);
+  --gold-glow:     rgba(255,216,77,0.3);
+  --electric:      #7357D8;
+  --electric-dim:  rgba(115,87,216,0.15);
+  --electric-glow: rgba(115,87,216,0.4);
+  --green:         #3DD68C;
+  --red:           #F87171;
+  --sans:          'Plus Jakarta Sans', system-ui, sans-serif;
+  --display:       'Space Grotesk', system-ui, sans-serif;
+  --whatsapp:      #25D366;
+  --warm:          #FAF9F6;
+  --warm-border:   rgba(0,0,0,0.07);
+  --warm-muted:    #5A5870;
+  --warm-fg:       #16151F;
+  --nav-h:         64px;
   color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
-/* ─── NAV ─────────────────────────────────────────────────────────── */
+/* ── NAV ─────────────────────────────────────────────────────── */
 .nav {
   position: fixed;
   top: env(safe-area-inset-top, 0px);
-  left: 0; right: 0;
-  z-index: 100;
-  height: 68px;
-  display: flex;
-  align-items: center;
+  left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  display: flex; align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  background: rgba(10,10,18,0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.3s ease;
+  padding: 0 clamp(20px,5vw,56px);
+  background: rgba(8,8,16,0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-light);
+  transition: background .3s;
 }
-.nav.scrolled { background: rgba(10,10,18,0.97); }
+.nav.scrolled { background: rgba(8,8,16,0.96); border-bottom-color: var(--border); }
 
-.nav-logo img { height: 28px; width: auto; display: block; }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--display);
+  font-weight: 700; font-size: 17px;
+  color: var(--fg); text-decoration: none;
 }
+.logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+  color: var(--muted); text-decoration: none;
+  font-size: 13.5px; font-weight: 500;
+  letter-spacing: .01em; transition: color .2s;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: var(--fg); }
 
 .nav-dropdown { position: relative; }
-.nav-dropdown > a { cursor: pointer; }
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
-  background: var(--surface);
+  display: none; position: absolute;
+  top: calc(100% + 14px); right: 0;
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px 0;
-  min-width: 200px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border-radius: 12px; padding: 8px;
+  min-width: 210px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.7);
 }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 13px;
-  color: var(--muted);
+  display: block; padding: 9px 14px;
+  border-radius: 8px;
+  color: var(--muted); font-size: 13.5px;
+  transition: background .15s, color .15s;
+}
+.dropdown-menu a:hover { background: var(--electric-dim); color: var(--fg); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 13.5px; font-weight: 600;
+  padding: 10px 20px; border-radius: 8px;
+  border: none; cursor: pointer; transition: all .2s;
   text-decoration: none;
-  transition: color 0.2s, background 0.2s;
 }
-.dropdown-menu a:hover { color: var(--gold); background: var(--gold-dim); }
+.btn-gold { background: var(--gold); color: #0a0a12; }
+.btn-gold:hover { background: #ffe97a; box-shadow: 0 0 24px var(--gold-glow); }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--electric); color: var(--electric); }
 
-/* ─── REVEAL ─────────────────────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-
-/* ─── HERO ─────────────────────────────────────────────────────────── */
+/* ── HERO ─────────────────────────────────────────────────────── */
 .hero {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-color: #0d0d1a;
-}
-.hero-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10,10,18,0.93) 0%,
-    rgba(10,10,18,0.72) 55%,
-    rgba(10,10,18,0.9) 100%
-  );
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 40px;
-  will-change: transform;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
-}
-.hero-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(46px, 8.5vw, 102px);
-  line-height: 0.93;
-  letter-spacing: -0.03em;
-  color: var(--fg);
-  text-wrap: balance;
-  margin-bottom: 28px;
-}
-.hero-title span { color: var(--gold); }
-.hero-subtitle {
-  font-size: clamp(16px, 2.2vw, 22px);
-  color: var(--muted);
-  font-weight: 400;
-  max-width: 520px;
-  line-height: 1.5;
-  margin-bottom: 44px;
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--gold);
-  color: #0A0A12;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 16px 34px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px var(--gold-glow);
-}
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--border);
-  color: var(--fg);
-  font-weight: 500;
-  font-size: 14px;
-  padding: 15px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-  margin-left: 14px;
-}
-.btn-ghost:hover { border-color: var(--electric); color: var(--gold); }
-
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  z-index: 2;
-}
-.scroll-line {
-  width: 40px; height: 1px;
-  background: var(--subtle);
-}
-
-/* ─── MARQUEE ─────────────────────────────────────────────────────── */
-.marquee-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 20px 0;
-  overflow: hidden;
-}
-.marquee-track {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 24s linear infinite;
-}
-.marquee-track span {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0 32px;
-  flex-shrink: 0;
-}
-.marquee-track span.accent { color: var(--gold); }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ─── SECTION COMMON ─────────────────────────────────────────────── */
-section { padding: 100px 40px; }
-
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-eyebrow::before {
-  content: '';
-  width: 28px; height: 1px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--fg);
-  text-wrap: balance;
-  margin-bottom: 16px;
-}
-.section-lead {
-  font-size: 17px;
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.65;
-}
-
-/* ─── PROCESS ─────────────────────────────────────────────────────── */
-.process-section { background: var(--bg); }
-.process-header { margin-bottom: 64px; }
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.process-card {
-  background: var(--raised);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 36px 28px;
-  cursor: default;
-  transition: border-color 0.3s, transform 0.15s;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.process-card:hover { border-color: var(--gold-glow); }
-.step-number {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 52px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: 0.9;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-.step-name {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--fg);
-  margin-bottom: 10px;
-}
-.step-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ─── STATS ─────────────────────────────────────────────────────── */
-.stats-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.stats-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.stat-item { flex: 1; }
-.stat-number {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(60px, 8vw, 100px);
-  line-height: 1;
-  color: var(--gold);
-  letter-spacing: -0.04em;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 12px;
-}
-.stat-label {
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-.stat-divider {
-  width: 1px;
-  height: 100px;
-  background: var(--border);
-  align-self: center;
-  flex-shrink: 0;
-}
-
-/* ─── CASE PREVIEW ─────────────────────────────────────────────────── */
-.case-section { background: var(--bg); padding: 0; }
-.case-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 560px;
-}
-.case-image {
-  position: relative;
-  overflow: hidden;
-  background: var(--raised);
-}
-.case-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.case-content {
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  padding-top: calc(var(--nav-h) + 60px);
+  padding-bottom: 80px;
+  padding-inline: clamp(20px,6vw,80px);
+  display: flex; flex-direction: column;
   justify-content: center;
-  padding: 80px 64px;
-  background: var(--surface);
-}
-.case-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.case-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(28px, 3.5vw, 44px);
-  line-height: 1.1;
-  color: var(--fg);
-  margin-bottom: 20px;
-  text-wrap: balance;
-}
-.case-text {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 36px;
-  max-width: 420px;
+  position: relative; overflow: hidden;
 }
 
-/* ─── APPROACH ─────────────────────────────────────────────────────── */
-.approach-section { background: var(--raised); }
-.approach-header { margin-bottom: 56px; }
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.approach-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 32px 28px;
-  transition: border-color 0.3s, transform 0.2s;
-}
-.approach-card:hover {
-  border-color: var(--gold-glow);
-  transform: translateY(-3px);
-}
-.approach-card-num {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-.approach-card-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--fg);
-  margin-bottom: 10px;
-}
-.approach-card-text {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-/* ─── TECH STRIP (web-specific) ────────────────────────────────── */
-.tech-strip {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 32px 40px;
-  overflow: hidden;
-}
-.tech-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.tech-pill {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  border: 1px solid var(--border);
-  padding: 8px 20px;
-  border-radius: 50px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.tech-pill:hover { color: var(--gold); border-color: var(--gold-glow); }
-
-/* ─── CTA ─────────────────────────────────────────────────────────── */
-.cta-section {
-  background: var(--bg);
-  text-align: center;
-  padding: 120px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.cta-section::before {
+/* Background grid */
+.hero::before {
   content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%);
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(115,87,216,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115,87,216,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent);
+}
+
+/* Electric orbs */
+.hero-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
   pointer-events: none;
 }
-.cta-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.cta-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(36px, 6vw, 72px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--fg);
-  margin-bottom: 20px;
-  text-wrap: balance;
-}
-.cta-text {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 500px;
-  margin: 0 auto 44px;
-  line-height: 1.6;
-}
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: #25D366;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 18px 36px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(37,211,102,0.35);
-}
-.btn-whatsapp svg { flex-shrink: 0; }
+.hero-orb-1 { width: 500px; height: 500px; background: rgba(115,87,216,0.18); top: -100px; right: -80px; }
+.hero-orb-2 { width: 300px; height: 300px; background: rgba(255,216,77,0.1); bottom: 80px; left: -60px; }
 
-/* ─── FOOTER ─────────────────────────────────────────────────────── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 64px 40px 40px;
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-dim); border: 1px solid rgba(255,216,77,0.25);
+  border-radius: 100px; padding: 6px 14px;
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  letter-spacing: .05em; text-transform: uppercase;
+  margin-bottom: 28px; width: fit-content;
 }
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.8); } }
+
+.hero-eyebrow {
+  font-family: var(--display); font-size: clamp(13px,1.8vw,15px);
+  font-weight: 500; color: var(--electric);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 16px;
 }
-.footer-top {
+
+.hero-h1 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6.5vw, 80px);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -.02em;
+  max-width: 820px;
+  margin-bottom: 24px;
+}
+.hero-h1 em { font-style: normal; color: var(--gold); }
+
+.hero-sub {
+  font-size: clamp(15px,1.5vw,17px);
+  color: var(--muted); max-width: 540px;
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 64px; }
+
+/* Stats strip */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--border-light);
+  border: 1px solid var(--border-light); border-radius: 16px;
+  overflow: hidden; max-width: 640px;
+}
+.hero-stat {
+  background: var(--card);
+  padding: 20px 24px;
+}
+.hero-stat-num {
+  font-family: var(--display); font-size: 28px; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+/* ── MARQUEE ─────────────────────────────────────────────────── */
+.marquee-wrap {
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 0; overflow: hidden; position: relative;
+}
+.marquee-wrap::before, .marquee-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+}
+.marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.marquee-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+.marquee-track { display: flex; gap: 0; animation: marquee 30s linear infinite; white-space: nowrap; }
+.marquee-set { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 0 28px; font-size: 12.5px; font-weight: 600;
+  color: var(--muted); letter-spacing: .04em; text-transform: uppercase;
+}
+.marquee-item::after { content: '·'; color: var(--electric); margin-left: 28px; }
+.marquee-item:last-child::after { display: none; }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SECTION SHARED ──────────────────────────────────────────── */
+section {
+  padding: clamp(60px,8vw,120px) clamp(20px,6vw,80px);
+}
+
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--electric);
+  margin-bottom: 12px;
+}
+.section-h2 {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700; line-height: 1.15; letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+.section-h2 em { font-style: normal; color: var(--gold); }
+.section-lead {
+  font-size: 15.5px; color: var(--muted); max-width: 560px; line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* ── WHAT WE BUILD ───────────────────────────────────────────── */
+.what-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap: 2px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light); border-radius: 20px; overflow: hidden;
 }
-.footer-brand-text {
-  font-size: 14px;
+.what-card {
+  background: var(--card); padding: 32px 28px;
+  position: relative; transition: background .25s;
+}
+.what-card:hover { background: #1a1a30; }
+.what-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--electric-dim); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 20px;
+}
+.what-card h3 {
+  font-family: var(--display); font-size: 16px; font-weight: 700;
+  margin-bottom: 10px; letter-spacing: -.01em;
+}
+.what-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+.what-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 16px; padding: 4px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 600; color: var(--gold);
+  background: var(--gold-dim); border: 1px solid rgba(255,216,77,0.2);
+}
+
+/* ── TECH STACK ──────────────────────────────────────────────── */
+.stack-section { background: var(--surface); }
+.stack-nav {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 36px; padding-bottom: 0;
+}
+.stack-tab {
+  padding: 10px 18px;
+  font-size: 13px; font-weight: 600;
+  color: var(--muted); background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; transition: all .2s;
+  margin-bottom: -1px;
+  font-family: var(--sans);
+}
+.stack-tab:hover { color: var(--fg); }
+.stack-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+.stack-panel { display: none; }
+.stack-panel.active { display: block; }
+
+.stack-cards {
+  display: flex; gap: 16px;
+  overflow-x: auto; padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.stack-cards:active { cursor: grabbing; }
+.stack-cards::-webkit-scrollbar { height: 4px; }
+.stack-cards::-webkit-scrollbar-track { background: var(--border-light); border-radius: 4px; }
+.stack-cards::-webkit-scrollbar-thumb { background: var(--electric-dim); border-radius: 4px; }
+
+.stack-card {
+  flex: 0 0 min(85vw, 320px);
+  scroll-snap-align: start;
+  background: var(--card); border: 1px solid var(--border-light);
+  border-radius: 16px; padding: 24px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.stack-card:hover {
+  border-color: var(--electric);
+  box-shadow: 0 0 0 1px var(--electric-dim), 0 16px 40px rgba(0,0,0,.4);
+}
+
+.stack-card-header {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
+}
+.stack-logo {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.stack-card-name { font-family: var(--display); font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.stack-card-role { font-size: 11.5px; color: var(--electric); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.stack-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.stack-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.stack-tag {
+  font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 100px;
+  background: var(--surface); border: 1px solid var(--border-light);
   color: var(--muted);
-  line-height: 1.7;
-  margin-top: 16px;
-  max-width: 280px;
 }
-.footer-col-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.stack-tag.green { color: var(--green); background: rgba(61,214,140,0.08); border-color: rgba(61,214,140,0.2); }
+.stack-tag.gold  { color: var(--gold);  background: var(--gold-dim); border-color: rgba(255,216,77,0.2); }
+
+/* ── PROCESS ─────────────────────────────────────────────────── */
+.process-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 2px; background: var(--border-light);
+  border: 1px solid var(--border-light); border-radius: 20px; overflow: hidden;
+}
+.process-step { background: var(--card); padding: 32px 28px; position: relative; }
+.step-num {
+  font-family: var(--display); font-size: 48px; font-weight: 800;
+  line-height: 1; margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--electric) 0%, rgba(115,87,216,0.2) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.process-step h3 {
+  font-family: var(--display); font-size: 15px; font-weight: 700;
+  margin-bottom: 10px; letter-spacing: -.01em;
+}
+.process-step p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+.step-checklist { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 7px; }
+.step-checklist li {
+  font-size: 12.5px; color: var(--muted);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.step-checklist li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+/* ── PERFORMANCE STRIP ───────────────────────────────────────── */
+.perf-strip {
+  background: linear-gradient(135deg, var(--surface) 0%, #0f0f2a 100%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: clamp(40px,5vw,60px) clamp(20px,6vw,80px);
+}
+.perf-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: center;
+  max-width: 1100px; margin: 0 auto;
+}
+.perf-copy .section-h2 { margin-bottom: 12px; }
+.perf-copy p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 420px; }
+
+.perf-scores {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.perf-score {
+  background: var(--card); border: 1px solid var(--border-light);
+  border-radius: 14px; padding: 20px 16px; text-align: center;
+  transition: border-color .2s;
+}
+.perf-score:hover { border-color: var(--electric); }
+.score-ring {
+  width: 64px; height: 64px; border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 17px; font-weight: 800;
+  position: relative;
+}
+.score-ring.gold-ring   { background: conic-gradient(var(--gold) 0% 100%, var(--surface) 0%); }
+.score-ring.green-ring  { background: conic-gradient(var(--green) 0% 99%, var(--surface) 0%); }
+.score-ring.blue-ring   { background: conic-gradient(var(--electric) 0% 95%, var(--surface) 0%); }
+.score-ring-inner {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 13px; font-weight: 800;
   color: var(--fg);
-  margin-bottom: 20px;
 }
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.score-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+
+/* ── COMPARISON TABLE ────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border-light); }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th {
+  background: var(--surface); padding: 14px 18px;
+  text-align: left; font-size: 12.5px; font-weight: 700;
+  color: var(--muted); letter-spacing: .05em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border-light);
 }
-.footer-links a {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
+th:first-child { color: var(--fg); font-size: 11px; }
+th.highlight { color: var(--gold); }
+td {
+  padding: 14px 18px; font-size: 13px;
+  border-bottom: 1px solid var(--border-light); vertical-align: middle;
 }
-.footer-links a:hover { color: var(--gold); }
+tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: rgba(115,87,216,0.05); }
+td:first-child { font-weight: 600; font-size: 12.5px; color: var(--muted); }
+.col-feature { background: rgba(255,216,77,0.04); }
+
+.tag { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+.tag-yes { background: rgba(61,214,140,0.12); color: var(--green); border: 1px solid rgba(61,214,140,0.25); }
+.tag-no  { background: rgba(248,113,113,0.1);  color: var(--red);   border: 1px solid rgba(248,113,113,0.2); }
+.tag-mid { background: rgba(255,216,77,0.1);   color: var(--gold);  border: 1px solid rgba(255,216,77,0.2); }
+
+/* ── CASE STUDY ──────────────────────────────────────────────── */
+.case-card {
+  background: var(--card);
+  border: 1px solid var(--border-light); border-radius: 20px;
+  padding: 40px; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.case-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--electric-dim); border: 1px solid var(--border);
+  padding: 5px 12px; border-radius: 100px;
+  font-size: 11.5px; font-weight: 700; color: var(--electric);
+  letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.case-card h3 {
+  font-family: var(--display); font-size: 22px; font-weight: 700;
+  line-height: 1.3; margin-bottom: 14px; letter-spacing: -.01em;
+}
+.case-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+.case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.case-metric {
+  background: var(--surface); border: 1px solid var(--border-light);
+  border-radius: 12px; padding: 16px;
+}
+.case-metric-num {
+  font-family: var(--display); font-size: 24px; font-weight: 800;
+  color: var(--gold); margin-bottom: 4px; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.case-metric-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+.case-tech-list { display: flex; flex-direction: column; gap: 10px; }
+.case-tech-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border-light);
+  font-size: 13px;
+}
+.case-tech-icon { font-size: 18px; width: 28px; text-align: center; }
+.case-tech-name { font-weight: 600; flex: 1; }
+.case-tech-result { font-size: 11.5px; color: var(--green); font-weight: 600; }
+
+/* ── CTA ─────────────────────────────────────────────────────── */
+.cta-section {
+  text-align: center;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(115,87,216,0.12) 0%, transparent 70%);
+  border-top: 1px solid var(--border-light);
+}
+.cta-section .section-h2 { font-size: clamp(26px,4vw,48px); max-width: 600px; margin: 0 auto 16px; }
+.cta-section .section-lead { margin: 0 auto 36px; }
+.cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  background: var(--surface); border-top: 1px solid var(--border-light);
+  padding: 48px clamp(20px,6vw,80px) 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 40px; margin-bottom: 40px;
+}
+.footer-brand p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 12px; max-width: 260px; }
+.footer-col h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+}
+.footer-col a {
+  display: block; font-size: 13.5px; color: var(--muted);
+  text-decoration: none; margin-bottom: 9px; transition: color .2s;
+}
+.footer-col a:hover { color: var(--fg); }
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  border-top: 1px solid var(--border-light); padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
 }
-.footer-copy {
-  font-size: 13px;
-  color: var(--subtle);
-}
-.footer-wa {
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s;
-}
-.footer-wa:hover { color: var(--gold); }
+.footer-bottom p { font-size: 12px; color: var(--subtle); }
 
-/* ─── MOBILE ─────────────────────────────────────────────────────── */
+/* ── REVEAL ANIMATION ────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .nav { padding: 0 20px; }
-  .nav-links { gap: 20px; }
-  .nav-links li:not(.nav-dropdown):not(:last-child) { display: none; }
-
-  section { padding: 72px 20px; }
-  .tech-strip { padding: 24px 20px; }
-
-  .hero-content { padding: 0 20px; }
-  .hero-scroll-hint { left: 20px; }
-
-  .process-grid { grid-template-columns: 1fr; }
-  .process-card { padding: 28px 22px; }
-
-  .stats-inner { flex-direction: column; gap: 32px; }
-  .stat-divider { display: none; }
-
-  .case-inner { grid-template-columns: 1fr; }
-  .case-image { height: 300px; }
-  .case-content { padding: 48px 24px; }
-
-  .approach-grid { grid-template-columns: 1fr 1fr; }
-
-  .footer-top { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-
-  .cta-section { padding: 80px 20px; }
-  .btn-ghost { display: none; }
+  .nav-links { display: none; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+  .perf-inner { grid-template-columns: 1fr; }
+  .perf-scores { grid-template-columns: repeat(3,1fr); }
+  .case-card { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .perf-copy p { max-width: 100%; }
 }
 @media (max-width: 480px) {
-  .approach-grid { grid-template-columns: 1fr; }
-  .tech-inner { gap: 10px; }
+  .perf-scores { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+  .case-metrics { grid-template-columns: 1fr; }
+  .what-grid { grid-template-columns: 1fr; }
+}
+
+/* ── LIGHT SECTIONS ──────────────────────────────────────────── */
+.light { background: var(--warm) !important; }
+.light, .light * { color: var(--warm-fg); }
+.light .section-label { color: var(--electric) !important; }
+.light .section-h2 { color: var(--warm-fg) !important; }
+.light .section-h2 em { color: var(--electric) !important; font-style: normal; }
+.light p, .light li { color: var(--warm-muted) !important; }
+.light h1,.light h2,.light h3,.light h4 { color: var(--warm-fg) !important; }
+.light .what-card { background: #fff !important; border-color: var(--warm-border) !important; box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important; }
+.light .what-card h3, .light .what-card h4 { color: var(--warm-fg) !important; }
+.light .what-card p { color: var(--warm-muted) !important; }
+.light .what-grid { background: var(--warm-border) !important; border-color: var(--warm-border) !important; }
+.light .what-tag { background: rgba(115,87,216,0.08) !important; color: var(--electric) !important; border-color: rgba(115,87,216,0.2) !important; }
+.light .section-lead { color: var(--warm-muted) !important; }
+
+/* ── MOBILE NAV ──────────────────────────────────────────────── */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--fg); border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.mobile-menu {
+  display: none; position: fixed;
+  top: var(--nav-h); left: 0; right: 0;
+  background: rgba(8,8,16,0.98); backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 24px clamp(20px,5vw,56px); z-index: 99;
+  flex-direction: column; gap: 4px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  display: block; padding: 12px 0; font-size: 15px; font-weight: 600;
+  color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border-light);
+  transition: color .2s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--fg); }
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: flex; }
 }
 </style>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     NAV
-════════════════════════════════════════════════════════════════ -->
-<nav class="nav" id="mainNav">
-  <a href="index.html" class="nav-logo">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='32' viewBox='0 0 240 32'%3E%3Ctext y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23F8F7F2'%3ETinyverse%3C/text%3E%3Ctext x='136' y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23FFD84D'%3ESolutions%3C/text%3E%3C/svg%3E" alt="Tinyverse Solutions" style="height:28px;width:auto;display:block;">
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="index.html">
+    <span class="logo-dot"></span>Tinyverse
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="nav-dropdown">
-      <a href="#">Services ▾</a>
+      <a href="#" style="color:var(--gold)">Services ▾</a>
       <div class="dropdown-menu">
-        <a href="service-graphics.html">Graphic Design</a>
         <a href="service-web.html">Web Development</a>
-        <a href="service-branding.html">Branding</a>
-        <a href="service-social.html">Social Media</a>
-        <a href="service-print.html">Print Design</a>
-        <a href="service-motion.html">Motion Graphics</a>
+        <a href="service-seo.html">SEO</a>
+        <a href="service-uiux.html">UI/UX Design</a>
+        <a href="service-graphics.html">Graphic Design</a>
+        <a href="service-growth.html">Growth Marketing</a>
+        <a href="service-ai.html">AI Solutions</a>
       </div>
     </li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#cta">Contact</a></li>
+    <li><a href="index.html#contact" class="btn btn-gold" style="padding:8px 18px;font-size:13px">Get a Quote</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="service-web.html">Web Development</a>
+  <a href="service-seo.html">SEO</a>
+  <a href="service-uiux.html">UI/UX Design</a>
+  <a href="service-graphics.html">Graphic Design</a>
+  <a href="service-growth.html">Growth Marketing</a>
+  <a href="service-ai.html">AI Solutions</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     1. HERO
-════════════════════════════════════════════════════════════════ -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <img src="img/service-web.jpg" alt="Web Development" onerror="this.style.opacity='0'">
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Now Building for East Africa
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content" id="heroContent">
-    <div class="hero-eyebrow reveal">Web Development</div>
-    <h1 class="hero-title reveal reveal-delay-1">
-      Websites That Work<br><span>While You Sleep.</span>
-    </h1>
-    <p class="hero-subtitle reveal reveal-delay-2">Fast. Secure. Conversion-Ready.</p>
-    <div class="reveal reveal-delay-3">
-      <a href="index.html#cta" class="btn-primary">Start a Project</a>
-      <a href="#process" class="btn-ghost">See Our Process</a>
+
+  <p class="hero-eyebrow">Web Development</p>
+
+  <h1 class="hero-h1">
+    Sites that load fast,<br>
+    rank high &amp; <em>convert.</em>
+  </h1>
+
+  <p class="hero-sub">
+    From WooCommerce stores with M-Pesa Daraja integration to headless Next.js platforms ,  we engineer every pixel and every API call to perform under real Kenyan network conditions.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="index.html#contact" class="btn btn-gold">Start a Project →</a>
+    <a href="#what-we-build" class="btn btn-ghost">See What We Build</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="47" data-suffix="+">0</div>
+      <div class="hero-stat-label">Sites shipped</div>
     </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <span class="scroll-line"></span>
-    <span>Scroll</span>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="99" data-suffix="%">0</div>
+      <div class="hero-stat-label">Avg uptime SLA</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="3" data-suffix="s">0</div>
+      <div class="hero-stat-label">Target FCP</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="90" data-suffix="+">0</div>
+      <div class="hero-stat-label">Lighthouse score</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     2. MARQUEE
-════════════════════════════════════════════════════════════════ -->
-<div class="marquee-section">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>Custom Websites</span>
-    <span class="accent">·</span>
-    <span>E-commerce</span>
-    <span class="accent">·</span>
-    <span>CMS</span>
-    <span class="accent">·</span>
-    <span>Performance</span>
-    <span class="accent">·</span>
-    <span>Security</span>
-    <span class="accent">·</span>
-    <span>Custom Websites</span>
-    <span class="accent">·</span>
-    <span>E-commerce</span>
-    <span class="accent">·</span>
-    <span>CMS</span>
-    <span class="accent">·</span>
-    <span>Performance</span>
-    <span class="accent">·</span>
-    <span>Security</span>
-    <span class="accent">·</span>
+<!-- ── MARQUEE ───────────────────────────────────────────────── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-set">
+      <span class="marquee-item">Next.js 14</span>
+      <span class="marquee-item">M-Pesa Daraja API</span>
+      <span class="marquee-item">WordPress + ACF</span>
+      <span class="marquee-item">WooCommerce</span>
+      <span class="marquee-item">Nginx + Redis</span>
+      <span class="marquee-item">Tailwind CSS</span>
+      <span class="marquee-item">Shopify Hydrogen</span>
+      <span class="marquee-item">Pesapal</span>
+      <span class="marquee-item">Cloudflare CDN</span>
+      <span class="marquee-item">React 18</span>
+      <span class="marquee-item">GSAP</span>
+      <span class="marquee-item">Framer Motion</span>
+      <span class="marquee-item">PHP 8.2</span>
+      <span class="marquee-item">Wordfence</span>
+      <span class="marquee-item">UpdraftPlus</span>
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <span class="marquee-item">Next.js 14</span>
+      <span class="marquee-item">M-Pesa Daraja API</span>
+      <span class="marquee-item">WordPress + ACF</span>
+      <span class="marquee-item">WooCommerce</span>
+      <span class="marquee-item">Nginx + Redis</span>
+      <span class="marquee-item">Tailwind CSS</span>
+      <span class="marquee-item">Shopify Hydrogen</span>
+      <span class="marquee-item">Pesapal</span>
+      <span class="marquee-item">Cloudflare CDN</span>
+      <span class="marquee-item">React 18</span>
+      <span class="marquee-item">GSAP</span>
+      <span class="marquee-item">Framer Motion</span>
+      <span class="marquee-item">PHP 8.2</span>
+      <span class="marquee-item">Wordfence</span>
+      <span class="marquee-item">UpdraftPlus</span>
+    </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     3. PROCESS
-════════════════════════════════════════════════════════════════ -->
-<section class="process-section" id="process">
-  <div class="process-header reveal">
-    <div class="section-eyebrow">How We Build</div>
-    <h2 class="section-title">Engineered to<br>Perform on Day One</h2>
-    <p class="section-lead">Every site follows four rigorous stages — from architecture to a live, optimised deployment that holds up under real traffic.</p>
-  </div>
-  <div class="process-grid">
-    <div class="process-card reveal reveal-delay-1" data-tilt>
-      <div class="step-number">01</div>
-      <div class="step-name">Scope &amp; Architecture</div>
-      <p class="step-desc">We map every page, user flow, and integration before writing a line of code. No surprises mid-build.</p>
+<!-- ── WHAT WE BUILD ─────────────────────────────────────────── -->
+<section id="what-we-build" class="light">
+  <p class="section-label">What We Build</p>
+  <h2 class="section-h2">Every type of web<br>platform ,  <em>done right.</em></h2>
+  <p class="section-lead">We don't just build websites. We build platforms engineered to survive Nairobi peak-hour traffic, rank on Google Kenya, and close sales while you sleep.</p>
+
+  <div class="what-grid reveal">
+    <div class="what-card">
+      <div class="what-icon">🛒</div>
+      <h3>E-Commerce Stores</h3>
+      <p>WooCommerce or Shopify storefronts with live M-Pesa STK Push checkout, Pesapal fallback, and automated order fulfilment flows. Mobile-first, cart-abandonment-proof.</p>
+      <span class="what-tag">Daraja API</span>
     </div>
-    <div class="process-card reveal reveal-delay-2" data-tilt>
-      <div class="step-number">02</div>
-      <div class="step-name">Design &amp; Prototype</div>
-      <p class="step-desc">Interactive prototypes let you see and click before anything is coded. Alignment happens here, not after launch.</p>
+    <div class="what-card">
+      <div class="what-icon">🏢</div>
+      <h3>Corporate &amp; Brand Sites</h3>
+      <p>WordPress builds on a hardened Nginx + Redis stack. ACF Pro custom fields, Elementor Pro or hand-coded blocks. Fast enough to pass Core Web Vitals on mobile data.</p>
+      <span class="what-tag">WordPress</span>
     </div>
-    <div class="process-card reveal reveal-delay-3" data-tilt>
-      <div class="step-number">03</div>
-      <div class="step-name">Build &amp; Test</div>
-      <p class="step-desc">Clean semantic code, cross-browser testing, and performance audits at every checkpoint, not just at the end.</p>
+    <div class="what-card">
+      <div class="what-icon">⚡</div>
+      <h3>High-Performance Web Apps</h3>
+      <p>Next.js 14 App Router with server components and edge caching. API-driven pages that serve under 200ms globally via Cloudflare. Ideal for portals, dashboards, SaaS.</p>
+      <span class="what-tag">Next.js</span>
     </div>
-    <div class="process-card reveal reveal-delay-4" data-tilt>
-      <div class="step-number">04</div>
-      <div class="step-name">Launch &amp; Optimise</div>
-      <p class="step-desc">We deploy, monitor the first 48 hours, and tune until load scores and conversion metrics look exactly right.</p>
+    <div class="what-card">
+      <div class="what-icon">📰</div>
+      <h3>Content &amp; Media Platforms</h3>
+      <p>Headless WordPress with a Sanity or Contentful CMS layer. Editors get a clean writing interface; readers get sub-second page loads. SEO baked in at the framework level.</p>
+      <span class="what-tag">Headless CMS</span>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">🔗</div>
+      <h3>API Integration Projects</h3>
+      <p>Custom middleware connecting your stack to payment gateways, shipping APIs, CRM, or ERP. We map the data flows, handle webhooks, and write the glue code that holds it together.</p>
+      <span class="what-tag">Custom APIs</span>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">🔄</div>
+      <h3>Redesigns &amp; Migrations</h3>
+      <p>Lift-and-shift migrations from shared hosting to VPS, or from a slow theme to a clean custom build ,  with zero downtime and full SEO equity preserved.</p>
+      <span class="what-tag">Migration</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     4. STATS
-════════════════════════════════════════════════════════════════ -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <div class="stat-number" data-target="50" data-suffix="+">0</div>
-      <div class="stat-label">Sites Launched and Live</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number" data-target="99" data-suffix="%">0</div>
-      <div class="stat-label">Uptime Guaranteed</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-number" data-target="3" data-suffix="s">0</div>
-      <div class="stat-label">Avg. Page Load Time</div>
+<!-- ── TECH STACK ────────────────────────────────────────────── -->
+<section class="stack-section">
+  <p class="section-label">Tech Stack</p>
+  <h2 class="section-h2">The tools behind<br><em>every build.</em></h2>
+  <p class="section-lead">We pick technology on merit, not trends. Each tool below earned its spot by performing reliably in production ,  including on Kenya's 4G networks and shared hosting environments.</p>
+
+  <div class="stack-nav" id="stackNav">
+    <button class="stack-tab active" data-panel="frontend">Frontend</button>
+    <button class="stack-tab" data-panel="cms">CMS &amp; Backend</button>
+    <button class="stack-tab" data-panel="ecommerce">E-Commerce</button>
+    <button class="stack-tab" data-panel="infra">Infrastructure</button>
+    <button class="stack-tab" data-panel="payments">Payments</button>
+  </div>
+
+  <!-- FRONTEND -->
+  <div class="stack-panel active" id="panel-frontend">
+    <div class="stack-cards" id="cards-frontend">
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">⚛️</div>
+          <div>
+            <div class="stack-card-name">Next.js 14</div>
+            <div class="stack-card-role">React Framework</div>
+          </div>
+        </div>
+        <p>App Router + Server Components for zero-JS pages where JS isn't needed. Edge runtime for API routes. ISR for blogs. Turbopack for dev speed. Our default for any project needing real performance.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Server Components</span>
+          <span class="stack-tag green">Edge Runtime</span>
+          <span class="stack-tag gold">ISR</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🌊</div>
+          <div>
+            <div class="stack-card-name">Tailwind CSS 3</div>
+            <div class="stack-card-role">Utility-first CSS</div>
+          </div>
+        </div>
+        <p>JIT compilation means zero unused CSS in production. Design tokens defined in `tailwind.config.js` enforce the brand system automatically across every component. No specificity wars, no bloat.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">JIT Mode</span>
+          <span class="stack-tag">Design Tokens</span>
+          <span class="stack-tag gold">Dark Mode</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🎬</div>
+          <div>
+            <div class="stack-card-name">GSAP + Framer Motion</div>
+            <div class="stack-card-role">Animation Layer</div>
+          </div>
+        </div>
+        <p>GSAP ScrollTrigger for timeline-pinned scroll experiences. Framer Motion for page transitions and micro-interactions in React. We only load the animation library when the experience demands it.</p>
+        <div class="stack-tags">
+          <span class="stack-tag">ScrollTrigger</span>
+          <span class="stack-tag green">60fps</span>
+          <span class="stack-tag">Lazy loaded</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">📐</div>
+          <div>
+            <div class="stack-card-name">TypeScript</div>
+            <div class="stack-card-role">Type Safety</div>
+          </div>
+        </div>
+        <p>Strict mode on every project. Catches API shape mismatches before they reach production. Especially critical when wiring Daraja callback payloads where a missing field breaks the entire checkout.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Strict Mode</span>
+          <span class="stack-tag">Zod Schemas</span>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     5. CASE PREVIEW
-════════════════════════════════════════════════════════════════ -->
-<section class="case-section">
-  <div class="case-inner">
-    <div class="case-image">
-      <img src="img/case-web-1.jpg" alt="Web Development Case Study" onerror="this.style.opacity='0'">
+  <!-- CMS + BACKEND -->
+  <div class="stack-panel" id="panel-cms">
+    <div class="stack-cards" id="cards-cms">
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">📝</div>
+          <div>
+            <div class="stack-card-name">WordPress 6.x</div>
+            <div class="stack-card-role">CMS + Backend</div>
+          </div>
+        </div>
+        <p>Full site editing with block themes, ACF Pro for structured data, and WP-CLI for automated deployments. Hardened with Wordfence firewall + Fail2Ban at server level. Our go-to for client-editable sites.</p>
+        <div class="stack-tags">
+          <span class="stack-tag">ACF Pro</span>
+          <span class="stack-tag green">WP-CLI</span>
+          <span class="stack-tag gold">Wordfence</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🧠</div>
+          <div>
+            <div class="stack-card-name">Sanity CMS</div>
+            <div class="stack-card-role">Headless Content Layer</div>
+          </div>
+        </div>
+        <p>GROQ-powered queries, real-time collaboration in the Studio, and a CDN-backed content lake. Used when content velocity matters ,  news sites, documentation, multi-language platforms.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Real-time</span>
+          <span class="stack-tag">GROQ API</span>
+          <span class="stack-tag gold">CDN-backed</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🐘</div>
+          <div>
+            <div class="stack-card-name">PHP 8.2 + MySQL 8</div>
+            <div class="stack-card-role">Server Runtime</div>
+          </div>
+        </div>
+        <p>PHP-FPM with OpCache enabled. MySQL 8 with InnoDB and proper indexing on large tables. Slow query logging wired to alerts. We don't blame the language ,  we blame bad configuration.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">OpCache</span>
+          <span class="stack-tag">PHP-FPM</span>
+          <span class="stack-tag">Slow query log</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🔄</div>
+          <div>
+            <div class="stack-card-name">Redis 7</div>
+            <div class="stack-card-role">Object Cache</div>
+          </div>
+        </div>
+        <p>Full-page and object caching for WordPress via Redis Object Cache plugin. Dramatically cuts MySQL queries per request ,  from 80+ to under 5 on a typical WooCommerce page load.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Object Cache</span>
+          <span class="stack-tag gold">−90% DB queries</span>
+        </div>
+      </div>
     </div>
-    <div class="case-content">
-      <div class="case-tag reveal">Featured Work</div>
-      <h2 class="case-title reveal reveal-delay-1">A Site That Converts Before It's Even Explained</h2>
-      <p class="case-text reveal reveal-delay-2">An e-commerce client was losing customers at the product page. We rebuilt the flow from scratch — faster load, cleaner copy, a trust-first checkout. Bounce rate dropped 41%. Revenue followed.</p>
-      <div class="reveal reveal-delay-3">
-        <a href="index.html#cta" class="btn-primary">Build With Us</a>
+  </div>
+
+  <!-- E-COMMERCE -->
+  <div class="stack-panel" id="panel-ecommerce">
+    <div class="stack-cards" id="cards-ecommerce">
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🛒</div>
+          <div>
+            <div class="stack-card-name">WooCommerce</div>
+            <div class="stack-card-role">E-Commerce Core</div>
+          </div>
+        </div>
+        <p>The best choice for Kenyan e-commerce because it speaks local payment APIs natively. We build custom checkout flows, product configurators, and subscription billing ,  all tuned for East African logistics.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Daraja Integration</span>
+          <span class="stack-tag">Custom Checkout</span>
+          <span class="stack-tag gold">Subscriptions</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">💚</div>
+          <div>
+            <div class="stack-card-name">M-Pesa Daraja API</div>
+            <div class="stack-card-role">Primary Payment Rail</div>
+          </div>
+        </div>
+        <p>STK Push for customer-initiated payments, C2B for Paybill/Till, B2C for disbursements (up to KES 70K per transaction). We handle callback validation, idempotency keys, and timeout retries ,  so zero failed confirmations.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">STK Push</span>
+          <span class="stack-tag green">C2B + B2C</span>
+          <span class="stack-tag gold">Webhook security</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">💳</div>
+          <div>
+            <div class="stack-card-name">Pesapal v3</div>
+            <div class="stack-card-role">Multi-Gateway Aggregator</div>
+          </div>
+        </div>
+        <p>Cards, M-Pesa, Airtel Money, and bank transfers through one integration. IPN (Instant Payment Notification) webhooks mapped to order status. Used as Daraja fallback or for international card acceptance.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">IPN Webhooks</span>
+          <span class="stack-tag">Cards + Mobile</span>
+          <span class="stack-tag gold">Multi-currency</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🏪</div>
+          <div>
+            <div class="stack-card-name">Shopify + Hydrogen</div>
+            <div class="stack-card-role">Headless Commerce</div>
+          </div>
+        </div>
+        <p>Shopify Storefront API + Hydrogen framework for brands needing pixel-perfect storefronts without Liquid template limits. Ideal for fashion, beauty, and lifestyle brands scaling regionally.</p>
+        <div class="stack-tags">
+          <span class="stack-tag">Storefront API</span>
+          <span class="stack-tag green">Hydrogen</span>
+          <span class="stack-tag gold">Edge CDN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFRA -->
+  <div class="stack-panel" id="panel-infra">
+    <div class="stack-cards" id="cards-infra">
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">⚙️</div>
+          <div>
+            <div class="stack-card-name">Nginx</div>
+            <div class="stack-card-role">Web Server + Reverse Proxy</div>
+          </div>
+        </div>
+        <p>Non-blocking event-driven architecture handles 10× more concurrent users than Apache at the same RAM. We configure microcaching (1-second TTL) on WooCommerce endpoints to absorb traffic spikes without stale data.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Microcaching</span>
+          <span class="stack-tag">HTTP/2</span>
+          <span class="stack-tag gold">Gzip + Brotli</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">☁️</div>
+          <div>
+            <div class="stack-card-name">Cloudflare</div>
+            <div class="stack-card-role">CDN + Security Layer</div>
+          </div>
+        </div>
+        <p>All static assets served from Cloudflare's Nairobi PoP ,  dramatically cutting latency for Kenyan users. DDoS mitigation, rate limiting, and WAF rules protect against automated attacks.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Nairobi PoP</span>
+          <span class="stack-tag green">DDoS Protection</span>
+          <span class="stack-tag">WAF</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🔒</div>
+          <div>
+            <div class="stack-card-name">Wordfence + Fail2Ban</div>
+            <div class="stack-card-role">Security Stack</div>
+          </div>
+        </div>
+        <p>Wordfence Premium for real-time threat intelligence and malware scanning at the application layer. Fail2Ban at the OS level to auto-ban IPs after repeated failed login attempts. Both layers, not one.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Real-time signatures</span>
+          <span class="stack-tag gold">IP auto-ban</span>
+          <span class="stack-tag">2FA enforced</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">💾</div>
+          <div>
+            <div class="stack-card-name">UpdraftPlus + S3</div>
+            <div class="stack-card-role">Backup System</div>
+          </div>
+        </div>
+        <p>Automated daily backups to an off-site S3 bucket. Retention policy: 7 daily, 4 weekly, 3 monthly. One-click restore with UpdraftPlus. We've restored production sites in under 12 minutes.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Daily automated</span>
+          <span class="stack-tag">Off-site S3</span>
+          <span class="stack-tag gold">&lt;12 min restore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENTS -->
+  <div class="stack-panel" id="panel-payments">
+    <div class="stack-cards" id="cards-payments">
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">📱</div>
+          <div>
+            <div class="stack-card-name">Daraja STK Push</div>
+            <div class="stack-card-role">Customer-to-Business</div>
+          </div>
+        </div>
+        <p>Triggers a payment prompt on the customer's phone. They enter their M-Pesa PIN, the confirmation hits our callback endpoint, and the order is confirmed ,  all in under 8 seconds on average.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Async confirmation</span>
+          <span class="stack-tag">Idempotency keys</span>
+          <span class="stack-tag gold">&lt;8s average</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🏦</div>
+          <div>
+            <div class="stack-card-name">Daraja B2C</div>
+            <div class="stack-card-role">Disbursements</div>
+          </div>
+        </div>
+        <p>Business-to-customer payouts for marketplaces, refunds, commissions, and gig payouts. Limit: KES 70,000 per transaction. We handle queue management, timeout retries, and reconciliation logs automatically.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Up to KES 70K</span>
+          <span class="stack-tag">Queue mgmt</span>
+          <span class="stack-tag gold">Reconciliation</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🔔</div>
+          <div>
+            <div class="stack-card-name">C2B Paybill / Till</div>
+            <div class="stack-card-role">Passive Collection</div>
+          </div>
+        </div>
+        <p>Register your Paybill/Till shortcode with a validation and confirmation URL. Every payment Safaricom routes hits your endpoint, gets validated, and triggers business logic ,  inventory decrement, access grant, etc.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Validation URL</span>
+          <span class="stack-tag">Confirmation URL</span>
+          <span class="stack-tag">IPN parsing</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <div class="stack-logo">🌍</div>
+          <div>
+            <div class="stack-card-name">Stripe + PayPal</div>
+            <div class="stack-card-role">International Cards</div>
+          </div>
+        </div>
+        <p>For clients selling to the diaspora or international buyers. Stripe Elements for card capture, Stripe Radar for fraud scoring, and PayPal as an alternative checkout. USD/EUR settlement, KES conversion.</p>
+        <div class="stack-tags">
+          <span class="stack-tag green">Stripe Radar</span>
+          <span class="stack-tag">3D Secure</span>
+          <span class="stack-tag gold">Multi-currency</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     5b. TECH STACK STRIP
-════════════════════════════════════════════════════════════════ -->
-<div class="tech-strip">
-  <div class="tech-inner">
-    <span class="tech-pill">WordPress</span>
-    <span class="tech-pill">Webflow</span>
-    <span class="tech-pill">Shopify</span>
-    <span class="tech-pill">WooCommerce</span>
-    <span class="tech-pill">HTML / CSS / JS</span>
-    <span class="tech-pill">PHP</span>
-    <span class="tech-pill">MySQL</span>
-    <span class="tech-pill">cPanel</span>
-  </div>
-</div>
+<!-- ── PROCESS ───────────────────────────────────────────────── -->
+<section>
+  <p class="section-label">Our Process</p>
+  <h2 class="section-h2">From brief to <em>live</em> ,  in four stages.</h2>
+  <p class="section-lead">No waterfall. No six-week scope creep. We ship in sprints with weekly milestones you can see and test.</p>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     6. APPROACH
-════════════════════════════════════════════════════════════════ -->
-<section class="approach-section">
-  <div class="approach-header reveal">
-    <div class="section-eyebrow">What We Build For</div>
-    <h2 class="section-title">Six Pillars of<br>Every Site We Ship</h2>
-    <p class="section-lead">These aren't optional extras. They're the standard every Tinyverse website meets before it goes live.</p>
-  </div>
-  <div class="approach-grid">
-    <div class="approach-card reveal reveal-delay-1">
-      <div class="approach-card-num">01</div>
-      <div class="approach-card-title">Mobile-First Build</div>
-      <p class="approach-card-text">Designed for the phone first, then scaled up — because that's where most of your visitors already are.</p>
+  <div class="process-steps reveal">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <h3>Discovery &amp; Architecture</h3>
+      <p>We map your goals, users, and content to the right technical stack before we write a line of code.</p>
+      <ul class="step-checklist">
+        <li>Stakeholder interviews &amp; user flows</li>
+        <li>Tech stack decision with written rationale</li>
+        <li>IA &amp; sitemap signed off</li>
+        <li>Hosting &amp; domain audit</li>
+      </ul>
     </div>
-    <div class="approach-card reveal reveal-delay-2">
-      <div class="approach-card-num">02</div>
-      <div class="approach-card-title">Performance Optimised</div>
-      <p class="approach-card-text">Compressed assets, lazy-loaded images, and clean code that scores 90+ on Lighthouse out of the gate.</p>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <h3>Design &amp; Prototype</h3>
+      <p>Figma-first. Mobile-first. You review real screens before we build anything in code.</p>
+      <ul class="step-checklist">
+        <li>Wireframes (lo-fi → hi-fi)</li>
+        <li>Interactive Figma prototype</li>
+        <li>Design system: colors, type, components</li>
+        <li>Client sign-off before handoff</li>
+      </ul>
     </div>
-    <div class="approach-card reveal reveal-delay-3">
-      <div class="approach-card-num">03</div>
-      <div class="approach-card-title">CMS Integration</div>
-      <p class="approach-card-text">You update your own content — no agency dependency, no invoices every time you change a sentence.</p>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <h3>Build &amp; Integrate</h3>
+      <p>Staged environment with a live preview link from day one. You test as we build.</p>
+      <ul class="step-checklist">
+        <li>WordPress / Next.js / Shopify build</li>
+        <li>Payment gateway integration &amp; testing</li>
+        <li>SEO meta, schema markup, sitemaps</li>
+        <li>Core Web Vitals audits every sprint</li>
+      </ul>
     </div>
-    <div class="approach-card reveal reveal-delay-1">
-      <div class="approach-card-num">04</div>
-      <div class="approach-card-title">E-commerce Ready</div>
-      <p class="approach-card-text">Catalog management, payment gateways (M-Pesa inclusive), and order flows built for the Kenyan market.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-2">
-      <div class="approach-card-num">05</div>
-      <div class="approach-card-title">Security Hardened</div>
-      <p class="approach-card-text">SSL, firewall rules, login protection, and scheduled backups — standard on every build, not an upsell.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-3">
-      <div class="approach-card-num">06</div>
-      <div class="approach-card-title">Ongoing Support</div>
-      <p class="approach-card-text">We don't disappear after launch. Monthly maintenance retainers keep your site fast, secure, and updated.</p>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <h3>Launch &amp; Maintain</h3>
+      <p>Zero-downtime cutover, DNS management, and 90-day post-launch support included.</p>
+      <ul class="step-checklist">
+        <li>Pre-launch checklist (27 items)</li>
+        <li>Cloudflare CDN + SSL provisioning</li>
+        <li>Monitoring &amp; uptime alerts wired</li>
+        <li>Team training handover session</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     7. CTA
-════════════════════════════════════════════════════════════════ -->
+<!-- ── PERFORMANCE STRIP ──────────────────────────────────────── -->
+<div class="perf-strip">
+  <div class="perf-inner">
+    <div class="perf-copy">
+      <p class="section-label">Performance Standards</p>
+      <h2 class="section-h2">We don't guess.<br>We <em>measure.</em></h2>
+      <p>Every site ships with a Lighthouse audit, a Core Web Vitals baseline, and real-device testing on a Safaricom 4G connection. These scores aren't theoretical ,  they're what your users actually experience.</p>
+    </div>
+    <div class="perf-scores">
+      <div class="perf-score">
+        <div class="score-ring gold-ring">
+          <div class="score-ring-inner" data-target="90" data-suffix="+">0</div>
+        </div>
+        <div class="score-label">Lighthouse</div>
+      </div>
+      <div class="perf-score">
+        <div class="score-ring green-ring">
+          <div class="score-ring-inner" data-target="99" data-suffix="%">0</div>
+        </div>
+        <div class="score-label">Uptime SLA</div>
+      </div>
+      <div class="perf-score">
+        <div class="score-ring blue-ring">
+          <div class="score-ring-inner" data-target="3" data-suffix="s">0</div>
+        </div>
+        <div class="score-label">Target FCP</div>
+      </div>
+      <div class="perf-score">
+        <div class="score-ring gold-ring">
+          <div class="score-ring-inner" data-target="85" data-suffix="+">0</div>
+        </div>
+        <div class="score-label">SEO Score</div>
+      </div>
+      <div class="perf-score">
+        <div class="score-ring green-ring">
+          <div class="score-ring-inner" data-target="100" data-suffix="%">0</div>
+        </div>
+        <div class="score-label">Mobile Pass</div>
+      </div>
+      <div class="perf-score">
+        <div class="score-ring blue-ring">
+          <div class="score-ring-inner" data-target="4" data-suffix="G">0</div>
+        </div>
+        <div class="score-label">Network tested</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PLATFORM COMPARISON ────────────────────────────────────── -->
+<section class="light">
+  <p class="section-label">Platform Guide</p>
+  <h2 class="section-h2">Which platform<br>is <em>right for you?</em></h2>
+  <p class="section-lead">We'll tell you honestly which platform fits your project ,  even if it's not the most expensive option.</p>
+
+  <div class="table-wrap reveal">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th class="highlight">Custom HTML</th>
+          <th>WordPress</th>
+          <th>WooCommerce</th>
+          <th>Shopify</th>
+          <th>Webflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>M-Pesa Daraja</td>
+          <td class="col-feature"><span class="tag tag-yes">✓ Native</span></td>
+          <td><span class="tag tag-yes">✓ Plugin</span></td>
+          <td><span class="tag tag-yes">✓ Native</span></td>
+          <td><span class="tag tag-mid">∼ Manual</span></td>
+          <td><span class="tag tag-no">✗ None</span></td>
+        </tr>
+        <tr>
+          <td>Client can edit content</td>
+          <td class="col-feature"><span class="tag tag-no">✗ Dev only</span></td>
+          <td><span class="tag tag-yes">✓ Easy</span></td>
+          <td><span class="tag tag-yes">✓ Easy</span></td>
+          <td><span class="tag tag-yes">✓ Easy</span></td>
+          <td><span class="tag tag-yes">✓ Easy</span></td>
+        </tr>
+        <tr>
+          <td>Monthly platform cost</td>
+          <td class="col-feature"><span class="tag tag-yes">KES 0</span></td>
+          <td><span class="tag tag-yes">Hosting only</span></td>
+          <td><span class="tag tag-yes">Hosting only</span></td>
+          <td><span class="tag tag-mid">USD 29–299</span></td>
+          <td><span class="tag tag-mid">USD 23–212</span></td>
+        </tr>
+        <tr>
+          <td>SEO control</td>
+          <td class="col-feature"><span class="tag tag-yes">✓ Total</span></td>
+          <td><span class="tag tag-yes">✓ Full</span></td>
+          <td><span class="tag tag-yes">✓ Full</span></td>
+          <td><span class="tag tag-mid">∼ Limited</span></td>
+          <td><span class="tag tag-mid">∼ Good</span></td>
+        </tr>
+        <tr>
+          <td>Handles large catalogue</td>
+          <td class="col-feature"><span class="tag tag-no">✗ No</span></td>
+          <td><span class="tag tag-mid">∼ With plugins</span></td>
+          <td><span class="tag tag-yes">✓ Yes</span></td>
+          <td><span class="tag tag-yes">✓ Yes</span></td>
+          <td><span class="tag tag-no">✗ No</span></td>
+        </tr>
+        <tr>
+          <td>Performance (Lighthouse)</td>
+          <td class="col-feature"><span class="tag tag-yes">95–100</span></td>
+          <td><span class="tag tag-mid">70–88</span></td>
+          <td><span class="tag tag-mid">65–82</span></td>
+          <td><span class="tag tag-yes">80–92</span></td>
+          <td><span class="tag tag-yes">85–95</span></td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td class="col-feature"><span style="font-size:12px;color:var(--muted)">Landing pages, micro-sites</span></td>
+          <td><span style="font-size:12px;color:var(--muted)">Brand sites, blogs</span></td>
+          <td><span style="font-size:12px;color:var(--muted)">Local e-commerce</span></td>
+          <td><span style="font-size:12px;color:var(--muted)">Scale + diaspora</span></td>
+          <td><span style="font-size:12px;color:var(--muted)">Design-led brands</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── CASE STUDY ────────────────────────────────────────────── -->
+<section style="background:var(--surface);">
+  <p class="section-label">Case Study</p>
+  <h2 class="section-h2">WooCommerce + M-Pesa<br><em>done properly.</em></h2>
+  <p class="section-lead">A Nairobi fashion retailer needed a checkout flow that matched how Kenyans actually pay. Here's what we shipped and what moved.</p>
+
+  <div class="case-card reveal">
+    <div>
+      <div class="case-tag">⚡ WooCommerce Build</div>
+      <h3>From abandoned carts to completed orders ,  same products, new checkout.</h3>
+      <p>The client was running a WooCommerce store on shared hosting with a generic M-Pesa plugin that had no callback validation. Customers would pay, the payment would register with Safaricom, but the order would stay "pending" ,  and the client would manually process them at EOD.</p>
+      <p>We rebuilt the checkout on a VPS with proper Daraja STK Push integration: callback endpoint with HMAC signature validation, idempotency keys to prevent double-processing, and a real-time order status webhook that updated the customer's screen within 8 seconds of payment confirmation.</p>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="case-metric-num" data-target="41" data-suffix="%">0</div>
+          <div class="case-metric-label">Cart abandonment drop</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num" style="color:var(--green)" data-target="0" data-suffix="">0</div>
+          <div class="case-metric-label">Failed M-Pesa confirmations post-launch</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num" data-target="2" data-suffix=".1s">0</div>
+          <div class="case-metric-label">Checkout page load (was 7.3s)</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num" style="color:var(--green)" data-target="99" data-suffix="%">0</div>
+          <div class="case-metric-label">Uptime over 90 days post-launch</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-tech-list">
+      <div class="case-tech-row">
+        <span class="case-tech-icon">🖥️</span>
+        <span class="case-tech-name">VPS migration</span>
+        <span class="case-tech-result">from shared hosting</span>
+      </div>
+      <div class="case-tech-row">
+        <span class="case-tech-icon">⚙️</span>
+        <span class="case-tech-name">Nginx + PHP-FPM + Redis</span>
+        <span class="case-tech-result">−90% DB queries</span>
+      </div>
+      <div class="case-tech-row">
+        <span class="case-tech-icon">💚</span>
+        <span class="case-tech-name">Daraja STK Push (custom)</span>
+        <span class="case-tech-result">0 failed callbacks</span>
+      </div>
+      <div class="case-tech-row">
+        <span class="case-tech-icon">☁️</span>
+        <span class="case-tech-name">Cloudflare CDN</span>
+        <span class="case-tech-result">Nairobi PoP active</span>
+      </div>
+      <div class="case-tech-row">
+        <span class="case-tech-icon">🔒</span>
+        <span class="case-tech-name">Wordfence + Fail2Ban</span>
+        <span class="case-tech-result">0 breaches</span>
+      </div>
+      <div class="case-tech-row">
+        <span class="case-tech-icon">💾</span>
+        <span class="case-tech-name">UpdraftPlus → S3</span>
+        <span class="case-tech-result">daily offsite backup</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────── -->
 <section class="cta-section">
-  <div class="cta-label reveal">Ready to Launch?</div>
-  <h2 class="cta-title reveal reveal-delay-1">Your Site Should Be<br>Working Right Now.</h2>
-  <p class="cta-text reveal reveal-delay-2">Send us a message and we'll scope your project within 24 hours — no fluff, just a plan.</p>
-  <div class="reveal reveal-delay-3">
-    <a href="https://wa.me/254700000000?text=Hi%20Tinyverse!%20I'm%20interested%20in%20web%20development%20services." class="btn-whatsapp" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.854L.054 23.25a.75.75 0 0 0 .916.99l5.598-1.463A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.671-.524-5.187-1.435l-.371-.222-3.853 1.008 1.028-3.745-.241-.387A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Chat on WhatsApp
-    </a>
+  <p class="section-label">Ready to Build?</p>
+  <h2 class="section-h2">Let's build something<br>that <em>actually works.</em></h2>
+  <p class="section-lead">We scope fast. First meeting is free. Bring your brief, your budget, or just the problem ,  we'll figure out the rest.</p>
+  <div class="cta-btns">
+    <a href="index.html#contact" class="btn btn-gold" style="font-size:15px;padding:14px 28px">Start a Conversation →</a>
+    <a href="index.html#services" class="btn btn-ghost" style="font-size:15px;padding:14px 28px">View All Services</a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     8. FOOTER
-════════════════════════════════════════════════════════════════ -->
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="nav-logo">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='32' viewBox='0 0 240 32'%3E%3Ctext y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23F8F7F2'%3ETinyverse%3C/text%3E%3Ctext x='136' y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23FFD84D'%3ESolutions%3C/text%3E%3C/svg%3E" alt="Tinyverse Solutions" style="height:28px;width:auto;display:block;">
-        </a>
-        <p class="footer-brand-text">A Nairobi-based creative agency building brands and digital products that earn attention.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="service-graphics.html">Graphic Design</a></li>
-          <li><a href="service-web.html">Web Development</a></li>
-          <li><a href="service-branding.html">Branding</a></li>
-          <li><a href="service-social.html">Social Media</a></li>
-          <li><a href="service-print.html">Print Design</a></li>
-          <li><a href="service-motion.html">Motion Graphics</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#work">Our Work</a></li>
-          <li><a href="index.html#cta">Contact</a></li>
-          <li><a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© <span id="footerYear"></span> Tinyverse Solutions. All rights reserved.</span>
-      <a href="https://wa.me/254700000000?text=Hi%20Tinyverse!" class="footer-wa" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.854L.054 23.25a.75.75 0 0 0 .916.99l5.598-1.463A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.671-.524-5.187-1.435l-.371-.222-3.853 1.008 1.028-3.745-.241-.387A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        +254 700 000 000
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="index.html" style="margin-bottom:12px;display:inline-flex">
+        <span class="logo-dot"></span>Tinyverse Solutions
       </a>
+      <p>Digital agency building websites, brands, and growth systems for East African businesses.</p>
     </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="service-web.html">Web Development</a>
+      <a href="service-seo.html">SEO</a>
+      <a href="service-uiux.html">UI/UX Design</a>
+      <a href="service-graphics.html">Graphic Design</a>
+      <a href="service-growth.html">Growth Marketing</a>
+      <a href="service-ai.html">AI Solutions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/254790784084" target="_blank">WhatsApp</a>
+      <a href="https://calendly.com/tinyverse" target="_blank">Schedule a Call</a>
+      <a href="mailto:hello@mytinyverse.com">hello@mytinyverse.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Tinyverse Solutions. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCRIPTS
-════════════════════════════════════════════════════════════════ -->
 <script>
 (function() {
-  /* ── Dynamic year ── */
-  var el = document.getElementById('footerYear');
-  if (el) el.textContent = new Date().getFullYear();
-})();
-
-/* ── Sticky nav ── */
-(function() {
-  var nav = document.getElementById('mainNav');
+  /* ── NAV scroll ──────────────────────────────────── */
+  var nav = document.getElementById('nav');
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
-})();
 
-/* ── Parallax hero ── */
-(function() {
-  var content = document.getElementById('heroContent');
-  if (!content) return;
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-  window.addEventListener('scroll', function() {
-    var sy = window.scrollY;
-    if (sy < window.innerHeight) {
-      content.style.transform = 'translateY(' + (sy * 0.28) + 'px)';
-    }
-  }, { passive: true });
-})();
-
-/* ── IntersectionObserver reveal ── */
-(function() {
-  var items = document.querySelectorAll('.reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(function(item) { observer.observe(item); });
-})();
-
-/* ── Animated counters ── */
-(function() {
-  var counters = document.querySelectorAll('.stat-number[data-target]');
-  var started = new Set();
-
-  function easeOut(t) {
-    return 1 - Math.pow(1 - t, 3);
+  /* ── Reveal on scroll ────────────────────────────── */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(r) { io.observe(r); });
+  } else {
+    reveals.forEach(function(r) { r.classList.add('visible'); });
   }
 
-  function animateCounter(el) {
-    var target = parseInt(el.dataset.target, 10);
-    var suffix = el.dataset.suffix || '';
-    var duration = 1600;
-    var start = null;
-
-    function step(ts) {
-      if (!start) start = ts;
-      var elapsed = ts - start;
-      var progress = Math.min(elapsed / duration, 1);
-      var current = Math.round(easeOut(progress) * target);
-      el.textContent = current + suffix;
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target + suffix;
-      }
+  /* ── Animated counters ───────────────────────────── */
+  function animateCounters(scope) {
+    var els = (scope || document).querySelectorAll('[data-target]');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el) { el.textContent = el.dataset.target + (el.dataset.suffix || ''); });
+      return;
     }
-    requestAnimationFrame(step);
+    var cio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var target = parseFloat(el.dataset.target);
+        var suffix = el.dataset.suffix || '';
+        var start = performance.now();
+        var dur = 1400;
+        function tick(now) {
+          var t = Math.min((now - start) / dur, 1);
+          var ease = 1 - Math.pow(1 - t, 3);
+          var val = Math.round(ease * target * 10) / 10;
+          el.textContent = (Number.isInteger(target) ? Math.round(val) : val.toFixed(1)) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    els.forEach(function(el) { cio.observe(el); });
   }
+  animateCounters();
 
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting && !started.has(entry.target)) {
-        started.add(entry.target);
-        animateCounter(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  counters.forEach(function(counter) { observer.observe(counter); });
-})();
-
-/* ── 3D card tilt ── */
-(function() {
-  var cards = document.querySelectorAll('[data-tilt]');
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-
-  cards.forEach(function(card) {
-    card.style.perspective = '800px';
-    card.addEventListener('mousemove', function(e) {
-      var rect = card.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var rotX = ((y - cy) / cy) * -8;
-      var rotY = ((x - cx) / cx) * 8;
-      card.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateZ(4px)';
-      card.style.borderColor = 'rgba(245,200,0,0.45)';
-    });
-    card.addEventListener('mouseleave', function() {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-      card.style.borderColor = '';
+  /* ── Stack tabs ──────────────────────────────────── */
+  var tabs = document.querySelectorAll('.stack-tab');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.stack-panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var id = 'panel-' + tab.dataset.panel;
+      var panel = document.getElementById(id);
+      if (panel) panel.classList.add('active');
     });
   });
+
+  /* ── Drag scroll for card strips ─────────────────── */
+  document.querySelectorAll('.stack-cards').forEach(function(el) {
+    var dragging = false, startX = 0, scrollLeft = 0;
+    el.addEventListener('mousedown', function(e) {
+      dragging = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+      el.style.userSelect = 'none';
+    });
+    document.addEventListener('mouseup', function() { dragging = false; el.style.userSelect = ''; });
+    el.addEventListener('mousemove', function(e) {
+      if (!dragging) return;
+      var x = e.pageX - el.offsetLeft;
+      el.scrollLeft = scrollLeft - (x - startX) * 1.2;
+    });
+  });
+
 })();
 </script>

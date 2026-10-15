@@ -1,1016 +1,272 @@
-<title>Graphic Design — Tinyverse Solutions</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<title>Graphic Design Kenya | Tinyverse Solutions</title>
+  <meta name="description" content="Brand identity, logos, social media graphics, and print design for Kenyan businesses. From startup branding to full visual identity systems.">
+  <meta name="keywords" content="graphic design Kenya, logo design Nairobi, brand identity Kenya, social media design Kenya, branding agency Nairobi, visual identity Kenya">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Tinyverse Solutions">
+  <link rel="canonical" href="https://www.mytinyverse.com/service-graphics.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tinyverse Solutions">
+  <meta property="og:title" content="Graphic Design Kenya | Tinyverse Solutions">
+  <meta property="og:description" content="Brand identity, logos, social media graphics, and print design for Kenyan businesses. From startup branding to full visual identity systems.">
+  <meta property="og:url" content="https://www.mytinyverse.com/service-graphics.html">
+  <meta property="og:image" content="https://www.mytinyverse.com/og-graphics.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tinyverseke">
+  <meta name="twitter:title" content="Graphic Design Kenya | Tinyverse Solutions">
+  <meta name="twitter:description" content="Brand identity, logos, social media graphics, and print design for Kenyan businesses. From startup branding to full visual identity systems.">
+  <meta name="twitter:image" content="https://www.mytinyverse.com/og-graphics.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap">
+
 <style>
-/* ─── TOKEN SYSTEM ─────────────────────────────────────────────────
-   Layout: fullscreen stacked sections, scroll-reveal, parallax hero
-   Color: cinema-dark with gold accent
-   Type: Syne 800 headlines / Inter 400-600 body
-──────────────────────────────────────────────────────────────────── */
 :root {
-  --bg: #0A0A12;
-  --surface: #111120;
-  --raised: #18182A;
-  --border: rgba(115,87,216,0.18);
-  --fg: #F8F7F2;
-  --muted: rgba(248,247,242,0.55);
-  --subtle: rgba(248,247,242,0.28);
-  --gold: #FFD84D;
-  --gold-dim: rgba(255,216,77,0.15);
-  --gold-glow: rgba(255,216,77,0.35);
-  --electric:     #7357D8;
-  --electric-dim: rgba(115,87,216,0.15);
-  --electric-glow:rgba(115,87,216,0.35);
+  --bg:            #080810;
+  --surface:       #0f0f1e;
+  --card:          #141428;
+  --border:        rgba(115,87,216,0.2);
+  --border-light:  rgba(255,255,255,0.06);
+  --fg:            #F0EFF9;
+  --muted:         rgba(240,239,249,0.52);
+  --subtle:        rgba(240,239,249,0.24);
+  --gold:          #FFD84D;
+  --gold-dim:      rgba(255,216,77,0.12);
+  --gold-glow:     rgba(255,216,77,0.35);
+  --electric:      #7357D8;
+  --electric-dim:  rgba(115,87,216,0.15);
+  --electric-glow: rgba(115,87,216,0.4);
+  --green:         #3DD68C;
+  --whatsapp:      #25D366;
+  --warm:          #FAF9F6;
+  --warm-border:   rgba(0,0,0,0.07);
+  --warm-muted:    #5A5870;
+  --warm-fg:       #16151F;
+  --sans:   'Plus Jakarta Sans', system-ui, sans-serif;
+  --display:'Space Grotesk', system-ui, sans-serif;
+  --nav-h:  64px;
   color-scheme: dark;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.65; overflow-x: hidden; }
 
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+/* LIGHT */
+.light { background: var(--warm) !important; }
+.light, .light * { color: var(--warm-fg); }
+.light .section-label { color: var(--electric) !important; }
+.light .section-h2 { color: var(--warm-fg) !important; }
+.light .section-h2 em { color: var(--electric) !important; font-style: normal; }
+.light p, .light li { color: var(--warm-muted) !important; }
+.light h1,.light h2,.light h3,.light h4 { color: var(--warm-fg) !important; }
+.light .card { background: #fff !important; border-color: var(--warm-border) !important; box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important; }
+.light .card h3, .light .card h4 { color: var(--warm-fg) !important; }
+.light .card p { color: var(--warm-muted) !important; }
+.light .section-sub { color: var(--warm-muted) !important; }
 
-/* ─── NAV ─────────────────────────────────────────────────────────── */
-.nav {
-  position: fixed;
-  top: env(safe-area-inset-top, 0px);
-  left: 0; right: 0;
-  z-index: 100;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  background: rgba(10,10,18,0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.3s ease;
-}
-.nav.scrolled { background: rgba(10,10,18,0.97); }
-
-.nav-logo img { height: 28px; width: auto; display: block; }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold); }
-
+/* NAV */
+.nav { position: fixed; top: env(safe-area-inset-top,0px); left: 0; right: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(20px,5vw,56px); background: rgba(8,8,16,0.7); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--border-light); transition: background .3s; }
+.nav.scrolled { background: rgba(8,8,16,0.96); border-bottom-color: var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--fg); text-decoration: none; }
+.logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13.5px; font-weight: 500; letter-spacing: .01em; transition: color .2s; }
+.nav-links a:hover { color: var(--fg); }
 .nav-dropdown { position: relative; }
-.nav-dropdown > a { cursor: pointer; }
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px 0;
-  min-width: 200px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
+.dropdown-menu { display: none; position: absolute; top: calc(100% + 14px); right: 0; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px; min-width: 200px; list-style: none; box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
 .nav-dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s, background 0.2s;
-}
-.dropdown-menu a:hover { color: var(--gold); background: var(--gold-dim); }
+.dropdown-menu li a { display: block; padding: 8px 14px; border-radius: 8px; font-size: 13px; }
+.dropdown-menu li a:hover { background: var(--electric-dim); color: var(--fg); }
+.btn-nav { background: var(--electric); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+.btn-nav:hover { opacity: .85; color: #fff; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--fg); border-radius: 2px; transition: .3s; }
+.mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: rgba(8,8,16,0.97); z-index: 99; padding: 32px clamp(20px,5vw,56px); overflow-y: auto; }
+.mobile-menu.open { display: flex; flex-direction: column; gap: 8px; }
+.mobile-menu a { color: var(--fg); text-decoration: none; font-size: 18px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border-light); }
+@media(max-width:768px) { .nav-links, .btn-nav { display: none; } .hamburger { display: flex; } }
 
-/* ─── REVEAL ─────────────────────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+/* HERO */
+.hero { min-height: 76vh; display: flex; align-items: center; padding: calc(var(--nav-h) + 60px) clamp(20px,5vw,56px) 80px; position: relative; overflow: hidden; }
+.hero-grid { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(115,87,216,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(115,87,216,.04) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; pointer-events: none; filter: blur(100px); }
+.hero-inner { position: relative; max-width: 760px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--electric-dim); border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--electric); margin-bottom: 28px; }
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--electric); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero h1 { font-family: var(--display); font-size: clamp(36px,6vw,68px); font-weight: 700; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 24px; }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero p { font-size: clamp(15px,1.6vw,18px); color: var(--muted); max-width: 560px; margin-bottom: 36px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* ─── HERO ─────────────────────────────────────────────────────────── */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-color: #0d0d1a;
-}
-.hero-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10,10,18,0.92) 0%,
-    rgba(10,10,18,0.75) 60%,
-    rgba(10,10,18,0.88) 100%
-  );
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 40px;
-  will-change: transform;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
-}
-.hero-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(52px, 9vw, 108px);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  color: var(--fg);
-  text-wrap: balance;
-  margin-bottom: 28px;
-}
-.hero-title span { color: var(--gold); }
-.hero-subtitle {
-  font-size: clamp(16px, 2.2vw, 22px);
-  color: var(--muted);
-  font-weight: 400;
-  max-width: 520px;
-  line-height: 1.5;
-  margin-bottom: 44px;
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--gold);
-  color: #0A0A12;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 16px 34px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px var(--gold-glow);
-}
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--border);
-  color: var(--fg);
-  font-weight: 500;
-  font-size: 14px;
-  padding: 15px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-  margin-left: 14px;
-}
-.btn-ghost:hover { border-color: var(--electric); color: var(--gold); }
+/* BUTTONS */
+.btn-primary { background: var(--electric); color: #fff; padding: 13px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; transition: opacity .2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary:hover { opacity: .85; }
+.btn-wa { background: var(--whatsapp); color: #fff; padding: 13px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; transition: opacity .2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-wa:hover { opacity: .85; }
+.btn-outline { border: 1.5px solid var(--border); color: var(--fg); padding: 12px 28px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; transition: border-color .2s, color .2s; }
+.btn-outline:hover { border-color: var(--electric); color: var(--electric); }
 
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  z-index: 2;
-}
-.scroll-line {
-  width: 40px; height: 1px;
-  background: var(--subtle);
-}
+/* SECTIONS */
+.section { padding: 80px clamp(20px,5vw,56px); }
+.section-inner { max-width: 1120px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--electric); margin-bottom: 14px; display: block; }
+.section-h2 { font-family: var(--display); font-size: clamp(28px,4vw,46px); font-weight: 700; line-height: 1.12; letter-spacing: -.02em; margin-bottom: 18px; text-wrap: balance; }
+.section-h2 em { font-style: normal; color: var(--electric); }
+.section-sub { font-size: 16px; color: var(--muted); max-width: 560px; margin-bottom: 52px; }
 
-/* ─── MARQUEE ─────────────────────────────────────────────────────── */
-.marquee-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 20px 0;
-  overflow: hidden;
-}
-.marquee-track {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 22s linear infinite;
-}
-.marquee-track span {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0 32px;
-  flex-shrink: 0;
-}
-.marquee-track span.accent { color: var(--gold); }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* GRID + CARDS */
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.card { background: var(--card); border: 1px solid var(--border-light); border-radius: 16px; padding: 28px; transition: border-color .25s, transform .25s; }
+.card:hover { border-color: var(--border); transform: translateY(-3px); }
+.card-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--electric-dim); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
+.card h3 { font-family: var(--display); font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-/* ─── SECTION COMMON ─────────────────────────────────────────────── */
-section { padding: 100px 40px; }
+/* PROCESS */
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.process-step { position: relative; padding: 28px; }
+.step-num { font-family: var(--display); font-size: 48px; font-weight: 700; line-height: 1; margin-bottom: 16px; background: linear-gradient(135deg,var(--electric),var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.step-title { font-family: var(--display); font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-eyebrow::before {
-  content: '';
-  width: 28px; height: 1px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--fg);
-  text-wrap: balance;
-  margin-bottom: 16px;
-}
-.section-lead {
-  font-size: 17px;
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.65;
-}
+/* STATS BAND */
+.stats-band { background: linear-gradient(135deg,var(--electric) 0%,#4A2DB0 100%); padding: 60px clamp(20px,5vw,56px); }
+.stats-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--display); font-size: 40px; font-weight: 700; color: #fff; display: block; margin-bottom: 6px; }
+.stat-label { font-size: 13px; color: rgba(255,255,255,0.7); }
 
-/* ─── PROCESS ─────────────────────────────────────────────────────── */
-.process-section { background: var(--bg); }
-.process-header { margin-bottom: 64px; }
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.process-card {
-  background: var(--raised);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 36px 28px;
-  cursor: default;
-  transition: border-color 0.3s, transform 0.15s;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.process-card:hover { border-color: var(--gold-glow); }
-.step-number {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 52px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: 0.9;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-.step-name {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--fg);
-  margin-bottom: 10px;
-}
-.step-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
+/* CTA STRIP */
+.cta-strip { padding: 80px clamp(20px,5vw,56px); background: linear-gradient(135deg,#0f0f1e 0%,#16103a 100%); text-align: center; }
+.cta-strip h2 { font-family: var(--display); font-size: clamp(26px,4vw,44px); font-weight: 700; margin-bottom: 16px; }
+.cta-strip p { font-size: 16px; color: var(--muted); margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-/* ─── STATS ─────────────────────────────────────────────────────── */
-.stats-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.stats-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.stat-item { flex: 1; }
-.stat-number {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(60px, 8vw, 100px);
-  line-height: 1;
-  color: var(--gold);
-  letter-spacing: -0.04em;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 12px;
-}
-.stat-label {
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-.stat-divider {
-  width: 1px;
-  height: 100px;
-  background: var(--border);
-  align-self: center;
-  flex-shrink: 0;
-}
-
-/* ─── CASE PREVIEW ─────────────────────────────────────────────────── */
-.case-section { background: var(--bg); padding: 0; }
-.case-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 560px;
-}
-.case-image {
-  position: relative;
-  overflow: hidden;
-  background: var(--raised);
-}
-.case-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.case-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 64px;
-  background: var(--surface);
-}
-.case-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.case-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(28px, 3.5vw, 44px);
-  line-height: 1.1;
-  color: var(--fg);
-  margin-bottom: 20px;
-  text-wrap: balance;
-}
-.case-text {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 36px;
-  max-width: 420px;
-}
-
-/* ─── APPROACH ─────────────────────────────────────────────────────── */
-.approach-section { background: var(--raised); }
-.approach-header { margin-bottom: 56px; }
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.approach-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 32px 28px;
-  transition: border-color 0.3s, transform 0.2s;
-}
-.approach-card:hover {
-  border-color: var(--gold-glow);
-  transform: translateY(-3px);
-}
-.approach-card-num {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-.approach-card-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--fg);
-  margin-bottom: 10px;
-}
-.approach-card-text {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-/* ─── CTA ─────────────────────────────────────────────────────────── */
-.cta-section {
-  background: var(--bg);
-  text-align: center;
-  padding: 120px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.cta-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(36px, 6vw, 72px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--fg);
-  margin-bottom: 20px;
-  text-wrap: balance;
-}
-.cta-text {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 500px;
-  margin: 0 auto 44px;
-  line-height: 1.6;
-}
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: #25D366;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 18px 36px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 0 0 rgba(37,211,102,0);
-}
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(37,211,102,0.35);
-}
-.btn-whatsapp svg { flex-shrink: 0; }
-
-/* ─── FOOTER ─────────────────────────────────────────────────────── */
+/* FOOTER */
 footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 64px 40px 40px;
+  background: var(--surface); border-top: 1px solid var(--border-light);
+  padding: 56px clamp(20px,6vw,72px) 36px;
 }
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-grid {
+  display: grid; grid-template-columns: 2fr repeat(3,1fr);
+  gap: 40px; max-width: 1120px; margin: 0 auto 48px;
 }
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
+.footer-brand p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 14px; max-width: 280px; }
+.footer-col h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
 }
-.footer-brand-text {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-top: 16px;
-  max-width: 280px;
+.footer-col a {
+  display: block; font-size: 13px; color: var(--muted);
+  text-decoration: none; margin-bottom: 10px; transition: color .2s;
 }
-.footer-col-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--fg);
-  margin-bottom: 20px;
-}
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.footer-links a {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--gold); }
+.footer-col a:hover { color: var(--fg); }
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  border-top: 1px solid var(--border-light); padding-top: 28px;
+  max-width: 1120px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
 }
-.footer-copy {
-  font-size: 13px;
-  color: var(--subtle);
-}
-.footer-wa {
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s;
-}
-.footer-wa:hover { color: var(--gold); }
+.footer-bottom p { font-size: 12px; color: var(--subtle); }
+@media(max-width:768px){ .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:480px){ .footer-grid { grid-template-columns: 1fr; } }
 
-/* ─── MOBILE ─────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .nav { padding: 0 20px; }
-  .nav-links { gap: 20px; }
-  .nav-links li:not(.nav-dropdown):not(:last-child) { display: none; }
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: none; }
 
-  section { padding: 72px 20px; }
-
-  .hero-content { padding: 0 20px; }
-  .hero-scroll-hint { left: 20px; }
-
-  .process-grid { grid-template-columns: 1fr; }
-  .process-card { padding: 28px 22px; }
-
-  .stats-inner { flex-direction: column; gap: 32px; }
-  .stat-divider { display: none; }
-
-  .case-inner { grid-template-columns: 1fr; }
-  .case-image { height: 300px; }
-  .case-content { padding: 48px 24px; }
-
-  .approach-grid { grid-template-columns: 1fr 1fr; }
-
-  .footer-top { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-
-  .cta-section { padding: 80px 20px; }
-  .btn-ghost { display: none; }
-}
-@media (max-width: 480px) {
-  .approach-grid { grid-template-columns: 1fr; }
-}
+/* RESPONSIVE */
+@media(max-width:900px) { .grid-3, .process-grid { grid-template-columns: repeat(2,1fr); } .stats-inner { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:600px) { .grid-3, .grid-2, .process-grid, .stats-inner { grid-template-columns: 1fr; } }
 </style>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     NAV
-════════════════════════════════════════════════════════════════ -->
-<nav class="nav" id="mainNav">
-  <a href="index.html" class="nav-logo">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='32' viewBox='0 0 240 32'%3E%3Ctext y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23F8F7F2'%3ETinyverse%3C/text%3E%3Ctext x='136' y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23FFD84D'%3ESolutions%3C/text%3E%3C/svg%3E" alt="Tinyverse Solutions" style="height:28px;width:auto;display:block;">
-  </a>
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-dot"></span>Tinyverse</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
     <li class="nav-dropdown">
-      <a href="#">Services ▾</a>
-      <div class="dropdown-menu">
-        <a href="service-graphics.html">Graphic Design</a>
-        <a href="service-web.html">Web Development</a>
-        <a href="service-branding.html">Branding</a>
-        <a href="service-social.html">Social Media</a>
-        <a href="service-print.html">Print Design</a>
-        <a href="service-motion.html">Motion Graphics</a>
-      </div>
+      <a href="#">Services &#9662;</a>
+      <ul class="dropdown-menu">
+        <li><a href="service-web.html">Web Development</a></li>
+        <li><a href="service-seo.html">SEO</a></li>
+        <li><a href="service-uiux.html">UI/UX Design</a></li>
+        <li><a href="service-graphics.html">Graphic Design</a></li>
+        <li><a href="service-growth.html">Growth Marketing</a></li>
+        <li><a href="service-ai.html">AI Solutions</a></li>
+      </ul>
     </li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#cta">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
+  <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27d%20like%20to%20discuss%20a%20project" class="btn-nav">Get Started</a>
+  <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
 </nav>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     1. HERO
-════════════════════════════════════════════════════════════════ -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <img src="img/service-graphics.jpg" alt="Graphic Design" onerror="this.style.opacity='0'">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content" id="heroContent">
-    <div class="hero-eyebrow reveal">Graphic Design</div>
-    <h1 class="hero-title reveal reveal-delay-1">
-      Visuals That<br><span>Stop the Scroll.</span>
-    </h1>
-    <p class="hero-subtitle reveal reveal-delay-2">Design That Gets Remembered</p>
-    <div class="reveal reveal-delay-3">
-      <a href="index.html#cta" class="btn-primary">Start a Project</a>
-      <a href="#process" class="btn-ghost">See Our Process</a>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <span class="scroll-line"></span>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     2. MARQUEE
-════════════════════════════════════════════════════════════════ -->
-<div class="marquee-section">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>Brand Identity</span>
-    <span class="accent">·</span>
-    <span>Logo Design</span>
-    <span class="accent">·</span>
-    <span>Social Media</span>
-    <span class="accent">·</span>
-    <span>Print Design</span>
-    <span class="accent">·</span>
-    <span>Motion Graphics</span>
-    <span class="accent">·</span>
-    <span>Brand Identity</span>
-    <span class="accent">·</span>
-    <span>Logo Design</span>
-    <span class="accent">·</span>
-    <span>Social Media</span>
-    <span class="accent">·</span>
-    <span>Print Design</span>
-    <span class="accent">·</span>
-    <span>Motion Graphics</span>
-    <span class="accent">·</span>
-  </div>
+<div class="mobile-menu" id="mmenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="service-web.html">Web Development</a>
+  <a href="service-seo.html">SEO</a>
+  <a href="service-uiux.html">UI/UX Design</a>
+  <a href="service-graphics.html">Graphic Design</a>
+  <a href="service-growth.html">Growth Marketing</a>
+  <a href="service-ai.html">AI Solutions</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27d%20like%20to%20discuss%20a%20project">WhatsApp Us</a>
 </div>
+<section class="hero"><div class="hero-grid"></div><div class="hero-glow" style="bottom:-80px;right:10%;background:radial-gradient(circle,rgba(61,214,140,.1),transparent 70%)"></div><div class="hero-inner"><div class="hero-badge"><span class="badge-dot"></span>Graphic Design</div><h1>Your brand,<br><em>made unforgettable.</em></h1><p>Logos, identities, and visual systems that make people stop and pay attention.</p><div class="hero-ctas"><a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27d%20like%20to%20discuss%20a%20design%20project" class="btn-wa"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.849L.057 23.428l5.694-1.493A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.369l-.359-.213-3.722.976.994-3.628-.234-.373A9.788 9.788 0 012.182 12C2.182 6.564 6.564 2.182 12 2.182S21.818 6.564 21.818 12 17.436 21.818 12 21.818z"/></svg> Chat on WhatsApp</a><a href="contact.html" class="btn-outline">See our portfolio</a></div></div></section><div class="stats-band"><div class="stats-inner"><div class="stat reveal"><span class="stat-num">200+</span><span class="stat-label">Brands designed</span></div><div class="stat reveal"><span class="stat-num">3 days</span><span class="stat-label">First concepts delivered</span></div><div class="stat reveal"><span class="stat-num">Unlimited</span><span class="stat-label">Revisions until right</span></div><div class="stat reveal"><span class="stat-num">All files</span><span class="stat-label">Fully handed over</span></div></div></div><section class="section light"><div class="section-inner"><span class="section-label">What we design</span><h2 class="section-h2">Every brand <em>touchpoint</em></h2><p class="section-sub">From your logo to your website banner, everything should look like it belongs together.</p><div class="grid-3"><div class="card reveal"><div class="card-icon">&#127919;</div><h3>Logo Design</h3><p>A mark that captures your brand character and works at any size.</p></div><div class="card reveal"><div class="card-icon">&#127912;</div><h3>Brand Identity</h3><p>Full visual systems: colours, typography, patterns, and usage guidelines.</p></div><div class="card reveal"><div class="card-icon">&#128241;</div><h3>Social Media Graphics</h3><p>Scroll-stopping templates and campaign assets sized for every platform.</p></div><div class="card reveal"><div class="card-icon">&#128424;</div><h3>Print Design</h3><p>Business cards, brochures, flyers, and banners ready for the printer.</p></div><div class="card reveal"><div class="card-icon">&#128230;</div><h3>Packaging Design</h3><p>Product packaging that sells on the shelf and looks great on the unboxing.</p></div><div class="card reveal"><div class="card-icon">&#128240;</div><h3>Marketing Collateral</h3><p>Pitch decks, proposals, and reports that make a strong impression.</p></div></div></div></section><section class="section"><div class="section-inner"><span class="section-label">Our creative process</span><h2 class="section-h2">How we <em>create</em></h2><div class="process-grid"><div class="process-step reveal"><div class="step-num">01</div><div class="step-title">Brief</div><p class="step-desc">We ask the right questions to understand your brand, audience, and ambitions.</p></div><div class="process-step reveal"><div class="step-num">02</div><div class="step-title">Concept</div><p class="step-desc">Multiple creative directions, each taking your brief in a different strategic direction.</p></div><div class="process-step reveal"><div class="step-num">03</div><div class="step-title">Refine</div><p class="step-desc">We polish the chosen direction until it is exactly right.</p></div><div class="process-step reveal"><div class="step-num">04</div><div class="step-title">Deliver</div><p class="step-desc">All final files, across every format you need, ready to use immediately.</p></div></div></div></section><section class="section light"><div class="section-inner"><span class="section-label">Why it matters</span><h2 class="section-h2">First impressions <em>are permanent</em></h2><p class="section-sub">People decide whether to trust a brand in seconds. Make those seconds count.</p><div class="grid-2"><div class="card reveal"><h3>Consistency builds trust</h3><p>A coherent visual identity makes your brand look professional and established.</p></div><div class="card reveal"><h3>You own everything</h3><p>Final files in AI, EPS, PDF, PNG, and SVG. No subscriptions, no licences.</p></div><div class="card reveal"><h3>Designed for real use</h3><p>Every asset delivered in the exact formats your printer or developer needs.</p></div><div class="card reveal"><h3>Strategy, not decoration</h3><p>Every visual choice has a reason rooted in how your audience thinks and feels.</p></div></div></div></section><div class="cta-strip"><h2>Ready to look the part?</h2><p>Tell us about your brand and we will show you what it could be.</p><div class="cta-btns"><a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27d%20like%20to%20discuss%20a%20design%20project" class="btn-wa"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.849L.057 23.428l5.694-1.493A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.369l-.359-.213-3.722.976.994-3.628-.234-.373A9.788 9.788 0 012.182 12C2.182 6.564 6.564 2.182 12 2.182S21.818 6.564 21.818 12 17.436 21.818 12 21.818z"/></svg> Start a project</a><a href="contact.html" class="btn-outline">Contact us</a></div></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     3. PROCESS
-════════════════════════════════════════════════════════════════ -->
-<section class="process-section" id="process">
-  <div class="process-header reveal">
-    <div class="section-eyebrow">How We Work</div>
-    <h2 class="section-title">A Process Built<br>for Impact</h2>
-    <p class="section-lead">Every project moves through four deliberate stages — from insight to a final asset that earns its place.</p>
-  </div>
-  <div class="process-grid">
-    <div class="process-card reveal reveal-delay-1" data-tilt>
-      <div class="step-number">01</div>
-      <div class="step-name">Brand Discovery</div>
-      <p class="step-desc">We dig into your market, audience, and competition before a single pixel moves. Strategy first, always.</p>
-    </div>
-    <div class="process-card reveal reveal-delay-2" data-tilt>
-      <div class="step-number">02</div>
-      <div class="step-name">Concept Development</div>
-      <p class="step-desc">Multiple creative directions explored. Bold ideas are tested against real-world use before you see them.</p>
-    </div>
-    <div class="process-card reveal reveal-delay-3" data-tilt>
-      <div class="step-number">03</div>
-      <div class="step-name">Refinement</div>
-      <p class="step-desc">Your feedback shapes one sharpened direction. We refine until it's exactly right — not approximately right.</p>
-    </div>
-    <div class="process-card reveal reveal-delay-4" data-tilt>
-      <div class="step-number">04</div>
-      <div class="step-name">Final Delivery</div>
-      <p class="step-desc">Production-ready files in every format you need, plus a usage guide so the work stays consistent forever.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     4. STATS
-════════════════════════════════════════════════════════════════ -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <div class="stat-number" data-target="47" data-suffix="">0</div>
-      <div class="stat-label">Brands Built From the Ground Up</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number" data-target="130" data-suffix="+">0</div>
-      <div class="stat-label">Design Projects Delivered</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-number" data-target="100" data-suffix="%">0</div>
-      <div class="stat-label">Client Approval Rate</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     5. CASE PREVIEW
-════════════════════════════════════════════════════════════════ -->
-<section class="case-section">
-  <div class="case-inner">
-    <div class="case-image">
-      <img src="img/case-graphics-1.jpg" alt="Case Study" onerror="this.style.opacity='0'">
-    </div>
-    <div class="case-content">
-      <div class="case-tag reveal">Featured Work</div>
-      <h2 class="case-title reveal reveal-delay-1">When Identity Does the Selling For You</h2>
-      <p class="case-text reveal reveal-delay-2">A challenger brand came to us with a commodity product and a big ambition. We built a visual world that made it feel premium before the pitch even started. Recognition went up. Deals closed faster.</p>
-      <div class="reveal reveal-delay-3">
-        <a href="index.html#cta" class="btn-primary">Discuss Your Project</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     6. APPROACH
-════════════════════════════════════════════════════════════════ -->
-<section class="approach-section">
-  <div class="approach-header reveal">
-    <div class="section-eyebrow">What We Deliver</div>
-    <h2 class="section-title">Full Spectrum<br>Design Work</h2>
-    <p class="section-lead">We cover every surface your brand touches — digital, print, and in motion.</p>
-  </div>
-  <div class="approach-grid">
-    <div class="approach-card reveal reveal-delay-1">
-      <div class="approach-card-num">01</div>
-      <div class="approach-card-title">Brand Strategy</div>
-      <p class="approach-card-text">Positioning, voice, audience definition — the foundation that makes every visual decision deliberate.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-2">
-      <div class="approach-card-num">02</div>
-      <div class="approach-card-title">Visual Identity</div>
-      <p class="approach-card-text">Logo system, color palette, typography — a complete mark that owns its space in any environment.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-3">
-      <div class="approach-card-num">03</div>
-      <div class="approach-card-title">Social Templates</div>
-      <p class="approach-card-text">Scroll-stopping post templates and story formats your team can use without a designer on call.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-1">
-      <div class="approach-card-num">04</div>
-      <div class="approach-card-title">Print &amp; Packaging</div>
-      <p class="approach-card-text">Business cards, brochures, packaging — physical design that holds up to a close look.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-2">
-      <div class="approach-card-num">05</div>
-      <div class="approach-card-title">Motion Design</div>
-      <p class="approach-card-text">Animated logos, social reels, and intro sequences that make a still brand feel alive.</p>
-    </div>
-    <div class="approach-card reveal reveal-delay-3">
-      <div class="approach-card-num">06</div>
-      <div class="approach-card-title">Brand Guidelines</div>
-      <p class="approach-card-text">A living rulebook so your brand looks like itself everywhere — on or off the Tinyverse team.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     7. CTA
-════════════════════════════════════════════════════════════════ -->
-<section class="cta-section">
-  <div class="cta-label reveal">Ready to Build?</div>
-  <h2 class="cta-title reveal reveal-delay-1">Let's Make Something<br>Worth Remembering.</h2>
-  <p class="cta-text reveal reveal-delay-2">Tell us what you're building. We'll tell you exactly how we'd design it.</p>
-  <div class="reveal reveal-delay-3">
-    <a href="https://wa.me/254700000000?text=Hi%20Tinyverse!%20I'm%20interested%20in%20graphic%20design%20services." class="btn-whatsapp" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.854L.054 23.25a.75.75 0 0 0 .916.99l5.598-1.463A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.671-.524-5.187-1.435l-.371-.222-3.853 1.008 1.028-3.745-.241-.387A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Chat on WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     8. FOOTER
-════════════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="nav-logo">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='32' viewBox='0 0 240 32'%3E%3Ctext y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23F8F7F2'%3ETinyverse%3C/text%3E%3Ctext x='136' y='26' font-family='Plus Jakarta Sans%2C Inter%2C sans-serif' font-weight='800' font-size='22' fill='%23FFD84D'%3ESolutions%3C/text%3E%3C/svg%3E" alt="Tinyverse Solutions" style="height:28px;width:auto;display:block;">
-        </a>
-        <p class="footer-brand-text">A Nairobi-based creative agency building brands and digital products that earn attention.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="service-graphics.html">Graphic Design</a></li>
-          <li><a href="service-web.html">Web Development</a></li>
-          <li><a href="service-branding.html">Branding</a></li>
-          <li><a href="service-social.html">Social Media</a></li>
-          <li><a href="service-print.html">Print Design</a></li>
-          <li><a href="service-motion.html">Motion Graphics</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#work">Our Work</a></li>
-          <li><a href="index.html#cta">Contact</a></li>
-          <li><a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© <span id="footerYear"></span> Tinyverse Solutions. All rights reserved.</span>
-      <a href="https://wa.me/254700000000?text=Hi%20Tinyverse!" class="footer-wa" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.854L.054 23.25a.75.75 0 0 0 .916.99l5.598-1.463A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.671-.524-5.187-1.435l-.371-.222-3.853 1.008 1.028-3.745-.241-.387A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        +254 700 000 000
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="index.html" style="display:inline-flex">
+        <span class="logo-dot"></span>Tinyverse Solutions
       </a>
+      <p>Digital agency building websites, brands, and growth systems for East African businesses.</p>
     </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="service-web.html">Web Development</a>
+      <a href="service-seo.html">SEO</a>
+      <a href="service-uiux.html">UI/UX Design</a>
+      <a href="service-graphics.html">Graphic Design</a>
+      <a href="service-growth.html">Growth Marketing</a>
+      <a href="service-ai.html">AI Solutions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/254790784084" target="_blank">WhatsApp</a>
+      <a href="https://calendly.com/tinyverse" target="_blank">Schedule a Call</a>
+      <a href="mailto:hello@mytinyverse.com">hello@mytinyverse.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Tinyverse Solutions. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCRIPTS
-════════════════════════════════════════════════════════════════ -->
 <script>
-(function() {
-  /* ── Dynamic year ── */
-  var el = document.getElementById('footerYear');
-  if (el) el.textContent = new Date().getFullYear();
-})();
-
-/* ── Sticky nav ── */
-(function() {
-  var nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }, { passive: true });
-})();
-
-/* ── Parallax hero ── */
-(function() {
-  var content = document.getElementById('heroContent');
-  if (!content) return;
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-  window.addEventListener('scroll', function() {
-    var sy = window.scrollY;
-    if (sy < window.innerHeight) {
-      content.style.transform = 'translateY(' + (sy * 0.28) + 'px)';
-    }
-  }, { passive: true });
-})();
-
-/* ── IntersectionObserver reveal ── */
-(function() {
-  var items = document.querySelectorAll('.reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(function(item) { observer.observe(item); });
-})();
-
-/* ── Animated counters ── */
-(function() {
-  var counters = document.querySelectorAll('.stat-number[data-target]');
-  var started = new Set();
-
-  function easeOut(t) {
-    return 1 - Math.pow(1 - t, 3);
-  }
-
-  function animateCounter(el) {
-    var target = parseInt(el.dataset.target, 10);
-    var suffix = el.dataset.suffix || '';
-    var duration = 1600;
-    var start = null;
-
-    function step(ts) {
-      if (!start) start = ts;
-      var elapsed = ts - start;
-      var progress = Math.min(elapsed / duration, 1);
-      var current = Math.round(easeOut(progress) * target);
-      el.textContent = current + suffix;
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target + suffix;
-      }
-    }
-    requestAnimationFrame(step);
-  }
-
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting && !started.has(entry.target)) {
-        started.add(entry.target);
-        animateCounter(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  counters.forEach(function(counter) { observer.observe(counter); });
-})();
-
-/* ── 3D card tilt ── */
-(function() {
-  var cards = document.querySelectorAll('[data-tilt]');
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-
-  cards.forEach(function(card) {
-    card.style.perspective = '800px';
-    card.addEventListener('mousemove', function(e) {
-      var rect = card.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var rotX = ((y - cy) / cy) * -8;
-      var rotY = ((x - cx) / cx) * 8;
-      card.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateZ(4px)';
-      card.style.borderColor = 'rgba(245,200,0,0.45)';
-    });
-    card.addEventListener('mouseleave', function() {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-      card.style.borderColor = '';
-    });
-  });
-})();
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+const hbg = document.getElementById('hbg'), mm = document.getElementById('mmenu');
+hbg.addEventListener('click', () => {
+  mm.classList.toggle('open');
+  const spans = hbg.querySelectorAll('span');
+  const o = mm.classList.contains('open');
+  spans[0].style.transform = o ? 'rotate(45deg) translate(5px,5px)' : '';
+  spans[1].style.opacity = o ? '0' : '1';
+  spans[2].style.transform = o ? 'rotate(-45deg) translate(5px,-5px)' : '';
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
